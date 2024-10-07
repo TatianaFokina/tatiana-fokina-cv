@@ -12,10 +12,11 @@ def generate_pdf():
         HTML(html_path).write_pdf(
             output_path,
             stylesheets=[CSS(css_path)],
-            presentational_hints=True,
-            optimize_images=True,
+            pdf_version="1.7",
+            pdf_variant="pdf/ua-1",
+            # optimize_images=True,
             zoom=1,
-            attachments=[css_path]
+            # attachments=[css_path]
         )
 
         # Add metadata with PyPDF2
