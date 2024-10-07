@@ -12,8 +12,8 @@ def generate_pdf():
         HTML(html_path).write_pdf(
             output_path,
             stylesheets=[CSS(css_path)],
-            pdf_version="1.7",
-            pdf_variant="pdf/ua-1",
+            pdf_version="2.0",
+            pdf_variant="pdf/ua-2",
             # optimize_images=True,
             zoom=1,
             # attachments=[css_path]
