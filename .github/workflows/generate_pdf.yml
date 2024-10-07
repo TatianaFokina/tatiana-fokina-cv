@@ -3,43 +3,41 @@ name: Generate PDF
 on:
   push:
     paths:
-      - "docs/**/*.html"
-      - "docs/**/*.css"
+      - 'docs/**/*.html'
+      - 'docs/**/*.css'
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.x"
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install pdfkit PyPDF2 pdfminer.six
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pdfkit PyPDF2 pdfminer.six
 
-      - name: Install wkhtmltopdf
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wkhtmltopdf
+    - name: Install wkhtmltopdf
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wkhtmltopdf
 
-      - name: List directory contents
-        run: |
-          ls -R
+    - name: Generate PDF
+      run: python generate_pdf.py
 
-      - name: Generate PDF
-        run: python generate_pdf.py
-
-      - name: Commit and push if changed
-        run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git add docs/tatiana-fokina-cv.pdf
-          git commit -m "Update PDF" || exit 0
-          git push
+    - name: Commit and push if changed
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add docs/tatiana-fokina-cv.pdf
+        git commit -m "Update PDF" || exit 0
+        git push
