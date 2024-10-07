@@ -189,6 +189,7 @@ a {
 		line-height: 1.5;
 		color: var(--print-text-color);
 		background-image: none;
+		font-family: "Tahoma", sans-serif;
 	}
 
 	body,

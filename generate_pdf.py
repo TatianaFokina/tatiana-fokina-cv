@@ -14,7 +14,7 @@ def generate_pdf():
             stylesheets=[CSS(css_path)],
             pdf_version="1.7",
             pdf_variant="pdf/ua-1",
-            # optimize_images=True,
+            optimize_images=True,
             zoom=1,
             # attachments=[css_path]
         )
@@ -32,6 +32,12 @@ def generate_pdf():
             '/Keywords': 'accessibility, web development, frontend',
             '/Author': 'Tatiana Fokina'
         })
+
+        # Add outline
+        writer.add_outline_item("Personal Information", 0)
+        writer.add_outline_item("Work Experience", 0)
+        writer.add_outline_item("Education", 0)
+        writer.add_outline_item("Other", 0)
 
         with open(output_path, 'wb') as f:
             writer.write(f)
