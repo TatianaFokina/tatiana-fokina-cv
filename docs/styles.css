@@ -76,7 +76,7 @@ body {
 .header__desc {
 	display: flex;
 	align-items: flex-start;
-	gap: 10px;
+	column-gap: 10px;
 }
 
 .header__title {

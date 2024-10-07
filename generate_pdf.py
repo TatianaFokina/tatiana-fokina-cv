@@ -15,7 +15,7 @@ def generate_pdf():
             pdf_version="1.7",
             pdf_variant="pdf/ua-1",
             # optimize_images=True,
-            # zoom=1,
+            zoom=1,
             # attachments=[css_path]
         )
 
@@ -39,15 +39,15 @@ def generate_pdf():
         writer.add_outline_item("Education", 0)
         writer.add_outline_item("Other", 0)
 
-        with open(output_path, 'wb') as f:
+        with open(output_path, "wb") as f:
             writer.write(f)
 
         # Verify content with PDFMiner
         text = extract_text(output_path)
         print("PDF content preview:")
-        print(text[:500])  # Print first 500 characters
+        print(text[:500])
 
-        print("Starting PDF generation...")
+        print("Starting PDF generation…")
         print(f"HTML path: {html_path}")
         print(f"CSS path: {css_path}")
         HTML(html_path).write_pdf(
@@ -60,7 +60,7 @@ def generate_pdf():
         print(f"PDF file size: {os.path.getsize(output_path)} bytes")
 
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"Attention! An error occurred: {e}")
 
 if __name__ == "__main__":
     generate_pdf()
