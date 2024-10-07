@@ -21,7 +21,7 @@ body {
 	min-height: 100vh;
 	margin: 30px;
 	font-family: "IBM Plex Sans", sans-serif;
-	font-size: clamp(0.9rem, 1.25rem + 4.2254vw - 25.3524px, 1.06rem);
+	font-size: clamp(1rem, 0.476vw + 0.869rem, 1.25rem);
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1.6;
@@ -80,8 +80,9 @@ body {
 }
 
 .header__title {
-	font-size: clamp(1.9rem, 1.25rem + 4.2254vw - 25.3524px, 2.5rem);
+	font-size: clamp(2.375rem, 1.19vw + 2.048rem, 3rem);
 	line-height: 1.18;
+	/* line-height: clamp(3.325rem, 2.81vw + 2.552rem, 4.8rem); */
 }
 
 .header__job {
@@ -109,10 +110,15 @@ body {
 	gap: 20px;
 }
 
+.main__text:not(:last-of-type) {
+	padding-bottom: 7px;
+}
+
 .main__title {
 	margin: 0 0 16px;
-	font-size: clamp(1.75rem, 1.25rem + 4.2254vw - 25.3524px, 1.6rem);
+	font-size: clamp(1.75rem, 1.19vw + 1.423rem, 2.375rem);
 	line-height: 1.263;
+	/* line-height: clamp(2.035rem, 1.837vw + 1.53rem, 3rem); */
 }
 
 .main__job + .main__job {
@@ -128,9 +134,10 @@ body {
 
 .main__job-title {
 	margin: 0;
-	font-size: clamp(1.5rem, 1.25rem + 4.2254vw - 25.3524px, 1.2rem);
+	font-size: clamp(1.438rem, 1.19vw + 1.11rem, 2.063rem);
 	font-weight: 400;
 	line-height: 1.5;
+	/* line-height: clamp(2.156rem, 1.786vw + 1.665rem, 3.094rem); */
 }
 
 .main__job-info {
@@ -163,11 +170,6 @@ body {
 
 /* Elements */
 
-.main__text:not(:last-of-type) {
-	padding-bottom: 7px;
-	line-height: 1.5;
-}
-
 a {
 	text-decoration: none;
 	color: var(--text-color);
@@ -183,7 +185,10 @@ a {
 
 	body {
 		margin: 0;
+		font-size: 16px;
+		line-height: 1.5;
 		color: var(--print-text-color);
+		background-image: none;
 	}
 
 	body,
@@ -200,11 +205,26 @@ a {
 		border-color: var(--print-decorative-color);
 	}
 
+	.header__title {
+		font-size: 40px;
+		line-height: 1.18;
+	}
+
 	.header__contact-item:not(:last-of-type)::after {
 		color: var(--print-decorative-color);
 	}
 
 	.header__pdf {
 		display: none;
+	}
+
+	.main__title {
+		font-size: 26px;
+		line-height: 1.263;
+	}
+
+	.main__job-title {
+		font-size: 19px;
+		line-height: 1.165;
 	}
 }
