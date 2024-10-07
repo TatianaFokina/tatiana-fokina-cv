@@ -15,6 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
@@ -39,10 +41,8 @@ jobs:
     - name: Generate PDF
       run: python generate_pdf.py
 
-    - name: Commit and push if changed
-      run: |
-        git config --global user.name 'GitHub Action'
-        git config --global user.email 'actions@users.noreply.github.com'
-        git add docs/tatiana-fokina-cv.pdf
-        git commit -m "Update PDF" || exit 0
-        git push
+    - name: Push changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Update PDF"
+        file_pattern: docs/tatiana-fokina-cv.pdf
