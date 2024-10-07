@@ -1,6 +1,6 @@
 from weasyprint import HTML, CSS
 from PyPDF2 import PdfReader, PdfWriter
-from pdfminer.high_level import extract_text
+# from pdfminer.high_level import extract_text
 import os
 
 def generate_pdf():
@@ -42,10 +42,10 @@ def generate_pdf():
         with open(output_path, 'wb') as f:
             writer.write(f)
 
-        # Verify content with PDFMiner
-        text = extract_text(output_path)
-        print("PDF content preview:")
-        print(text[:500])  # Print first 500 characters
+        # # Verify content with PDFMiner
+        # text = extract_text(output_path)
+        # print("PDF content preview:")
+        # print(text[:500])  # Print first 500 characters
 
         print("PDF generated successfully 🎉")
         print(f"PDF file size: {os.path.getsize(output_path)} bytes")
