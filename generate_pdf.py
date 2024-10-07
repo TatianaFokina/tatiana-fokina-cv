@@ -1,4 +1,5 @@
 from weasyprint import HTML, CSS
+from weasyprint.document import DocumentMetadata
 from PyPDF2 import PdfReader, PdfWriter
 from pdfminer.high_level import extract_text
 import os
@@ -9,11 +10,23 @@ def generate_pdf():
     output_path = 'docs/tatiana-fokina-cv.pdf'
 
     try:
+        metadata = DocumentMetadata(
+            title="Your Document Title",
+            generator="WeasyPrint",
+            keywords=["accessibility", "PDF/UA"],
+            custom={
+                "pdfua": "1",
+                "part": "1",
+                "conformance": "A"
+            }
+        )
+
         HTML(html_path).write_pdf(
             output_path,
             stylesheets=[CSS(css_path)],
             pdf_version="2.0",
             pdf_variant="pdf/ua-2",
+            metadata=metadata,
             # optimize_images=True,
             zoom=1,
             # attachments=[css_path]
