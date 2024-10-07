@@ -17,7 +17,7 @@
 }
 
 body {
-	display: grid;
+	display: flex;
 	min-height: 100vh;
 	margin: 30px;
 	font-family: "IBM Plex Sans", sans-serif;
@@ -180,6 +180,7 @@ a {
 
 @media print {
 	@page {
+		size: A4;
 		margin: 4mm;
 	}
 
@@ -189,7 +190,6 @@ a {
 		line-height: 1.5;
 		color: var(--print-text-color);
 		background-image: none;
-		font-family: "Tahoma", sans-serif;
 	}
 
 	body,

@@ -1,6 +1,6 @@
 from weasyprint import HTML, CSS
 from PyPDF2 import PdfReader, PdfWriter
-# from pdfminer.high_level import extract_text
+from pdfminer.high_level import extract_text
 import os
 
 def generate_pdf():
@@ -14,8 +14,8 @@ def generate_pdf():
             stylesheets=[CSS(css_path)],
             pdf_version="1.7",
             pdf_variant="pdf/ua-1",
-            optimize_images=True,
-            zoom=1,
+            # optimize_images=True,
+            # zoom=1,
             # attachments=[css_path]
         )
 
@@ -42,10 +42,19 @@ def generate_pdf():
         with open(output_path, 'wb') as f:
             writer.write(f)
 
-        # # Verify content with PDFMiner
-        # text = extract_text(output_path)
-        # print("PDF content preview:")
-        # print(text[:500])  # Print first 500 characters
+        # Verify content with PDFMiner
+        text = extract_text(output_path)
+        print("PDF content preview:")
+        print(text[:500])  # Print first 500 characters
+
+        print("Starting PDF generation...")
+        print(f"HTML path: {html_path}")
+        print(f"CSS path: {css_path}")
+        HTML(html_path).write_pdf(
+            output_path,
+            stylesheets=[CSS(css_path)]
+        )
+        print("PDF generation completed")
 
         print("PDF generated successfully 🎉")
         print(f"PDF file size: {os.path.getsize(output_path)} bytes")
