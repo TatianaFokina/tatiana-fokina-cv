@@ -7,5 +7,5 @@ Stack: HTML, CSS, Python.
 Generate PDF version based on HTML:
 
 ```bash
-python generate_._pdf.py
+python generate_pdf.py
 ```
