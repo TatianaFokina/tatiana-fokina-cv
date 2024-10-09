@@ -1,0 +1,17 @@
+{
+  "name": "cv-project",
+  "version": "1.0.0",
+  "description": "Template for my CV with auto generation PDF version of it",
+  "main": "index.js",
+  "scripts": {
+    "generate-pdf": "node generate_pdf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.2.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^23.5.1"
+  }
+}

@@ -11,7 +11,8 @@
 			rel="stylesheet"
 		/>
 		<title>Tatiana Fokina's CV</title>
-		<link rel="stylesheet" href="./styles.css" />
+		<link href="./styles.css" rel="stylesheet" />
+		<link href="./print-styles.css" rel="stylesheet" media="print" />
 	</head>
 	<body>
 		<div class="container">
@@ -21,7 +22,7 @@
 						<h1 class="header__title" aria-describedby="job-title">
 							Tatiana Fokina
 						</h1>
-						<p class="header__job" id="job-title">Accessibility engineer</p>
+						<h2 class="header__job" id="job-title">Accessibility engineer</h2>
 						<span class="header__pdf">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -43,56 +44,59 @@
 								<path d="M16 13H8" />
 								<path d="M16 17H8" />
 							</svg>
-							<a class="header__link" href="#">PDF version</a>
+							<a class="header__link link" href="#">PDF version</a>
 						</span>
 					</div>
 
 					<div class="header__contacts">
-						<ul class="header__contacts-list">
-							<li class="header__contact-item">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="2"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									aria-hidden="true"
-								>
-									<path
-										d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
-									/>
-									<circle cx="12" cy="10" r="3" />
-								</svg>
-								Tbilisi, Georgia
-							</li>
-							<li class="header__contact-item">
-								<a
-									class="header__contact-link"
-									href="mailto: fokinatatian@gmail.com"
-									>fokinatatian@gmail.com</a
-								>
-							</li>
-							<li class="header__contact-item">
-								<a
-									class="header__contact-link"
-									href="http://www.linkedin.com/in/tatiana-fokina-frontend/"
-									>linkedin.com/in/tatiana-fokina</a
-								>
-							</li>
-							<li class="header__contact-item">
-								<a class="header__contact-link" href="https://fokina-dev.ru/"
-									>fokina-dev.ru</a
-								>
-							</li>
-						</ul>
+						<nav>
+							<ul class="header__contacts-list">
+								<li class="header__contact-item">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="16"
+										height="16"
+										viewBox="0 0 24 24"
+										fill="none"
+										stroke="currentColor"
+										stroke-width="2"
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										aria-hidden="true"
+									>
+										<path
+											d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"
+										/>
+										<circle cx="12" cy="10" r="3" />
+									</svg>
+									Tbilisi, Georgia
+								</li>
+								<li class="header__contact-item">
+									<a
+										class="header__contact-link link"
+										href="mailto: fokinatatian@gmail.com"
+										>fokinatatian@gmail.com</a
+									>
+								</li>
+								<li class="header__contact-item">
+									<a
+										class="header__contact-link link"
+										href="http://www.linkedin.com/in/tatiana-fokina-frontend/"
+										>linkedin.com/in/tatiana-fokina</a
+									>
+								</li>
+								<li class="header__contact-item">
+									<a
+										class="header__contact-link link"
+										href="https://fokina-dev.ru/"
+										>fokina-dev.ru</a
+									>
+								</li>
+							</ul>
+						</nav>
 					</div>
 				</div>
 			</header>
-			<hr class="divider" />
 			<main>
 				<div class="main">
 					<section class="main__section" aria-labelledby="about">
@@ -242,10 +246,12 @@
 						<p class="main__text">
 							<b>Community experience</b>. Google's Women Techmakers ambassador
 							(WTM), co-host of the podcast ″<a
+								class="main__link link"
 								href="https://inclusivepineapple.github.io/"
 								>Inclusive Pineapple</a
 							>,″ co-organizer of Saint Petersburg
 							<a
+								class="main__link link"
 								href="https://www.youtube.com/playlist?list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB/"
 								>pitera11y_meetup</a
 							>
@@ -253,14 +259,19 @@
 						</p>
 						<p class="main__text">
 							<b>Publications and talks</b>. Russian translation of
-							<a href="https://a11ymyths.com/ru/">Accessibility Myths</a>; a
-							post ″<a
+							<a class="main__link link" href="https://a11ymyths.com/ru/"
+								>Accessibility Myths</a
+							>; a post ″<a
+								class="main__link link"
 								href="https://a11y-blog.dev/en/articles/understanding-a-skip-link/"
 								>Understanding skip links</a
 							>″ on my blog; an article ″<a
+								class="main__link link"
 								href="https://doka.guide/a11y/live-region/"
 								>What is ARIA live regions</a
-							>″ on Doka Guide; a talk ″<a href="https://youtu.be/s8JwoE91xcA/"
+							>″ on Doka Guide; a talk ″<a
+								href="https://youtu.be/s8JwoE91xcA/"
+								class="main__link link"
 								>Accessibility features and where to find them</a
 							>″ at the Accessibility Conference.
 						</p>

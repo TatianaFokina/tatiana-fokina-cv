@@ -1,15 +1,11 @@
 # Tatiana Fokina's CV
 
-Stack: HTML, CSS, Python.
+Stack: HTML, CSS, Node.js, JSON.
 
 ## Commands
 
 Generate PDF version based on HTML:
 
 ```bash
-python generate_pdf.py
+npm run generate_pdf.py
 ```
-
-## Problems
-
-weasyprint doesn't support new css varibles such as :not selector, flex gaps, grid.
