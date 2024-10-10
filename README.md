@@ -7,5 +7,5 @@ Stack: HTML, CSS, Node.js, JSON.
 Generate PDF version based on HTML:
 
 ```bash
-npm run generate_pdf.py
+npm run generate_pdf.js
 ```
