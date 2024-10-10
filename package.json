@@ -1,7 +1,7 @@
 {
   "name": "cv-project",
   "version": "1.0.0",
-  "description": "Template for my CV with auto generation PDF version of it",
+  "description": "Template for my CV with auto generation PDF version",
   "main": "index.js",
   "scripts": {
     "generate-pdf": "node generate_pdf.js"
