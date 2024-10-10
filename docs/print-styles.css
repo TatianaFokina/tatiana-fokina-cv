@@ -7,7 +7,7 @@
 @media print {
 	@page {
 		size: A4;
-		margin: 4mm;
+		margin: 8mm;
 		background: none;
 	}
 
@@ -19,17 +19,9 @@
 		background-image: none;
 	}
 
-	ul,
-	ol,
-	article {
-		page-break-inside: avoid;
-		break-inside: avoid;
-	}
-
-	a {
-		color: initial;
-		text-decoration: initial;
-		border-bottom: none;
+	.container {
+		padding: 0;
+		border: 0;
 	}
 
 	/* Header */
@@ -37,10 +29,10 @@
 	.header {
 		padding-bottom: 16px;
 		gap: 16px;
-		border-color: var(--print-decorative-color);
+		border-bottom: 2px dashed var(--print-decorative-color);
 	}
 
-	.header__pdf {
+	.header__link {
 		display: none;
 	}
 
@@ -49,8 +41,20 @@
 	}
 
 	.header__contact-item:not(:last-of-type)::after {
+		content: "|";
+		position: absolute;
+		top: 0;
+		right: 0;
 		margin: 0 -12px;
 		color: var(--print-decorative-color);
+	}
+
+	.header__contact-link-pdf {
+		display: initial;
+	}
+
+	.header__contact-link-site {
+		display: none;
 	}
 
 	.header__desc {
@@ -64,6 +68,12 @@
 
 	.header__job {
 		font-size: 23px;
+	}
+
+	.header__contacts-list,
+	.main__job {
+		page-break-inside: avoid;
+		break-inside: avoid;
 	}
 
 	/* Body content */
@@ -82,8 +92,44 @@
 		margin-top: 14px;
 	}
 
+	.main__job-header {
+		gap: 50px;
+		margin-bottom: 8px;
+	}
+
 	.main__job-title {
 		font-size: 19px;
 		line-height: 1.165;
+	}
+
+	.main__job-info {
+		gap: 3px;
+	}
+
+	.main__job-info:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: -40px;
+		width: 30px;
+		height: 2px;
+		background-color: var(--text-color);
+	}
+
+	.main__job-position {
+		margin-bottom: 8px;
+	}
+
+	.main__job-list {
+		margin-left: 16px;
+	}
+
+	/* Elements */
+
+	.link {
+		color: var(--print-text-color);
+		text-decoration: initial;
+		border-color: var(--print-underline-color);
+		border-width: 1px;
 	}
 }
