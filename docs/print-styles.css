@@ -1,7 +1,7 @@
 :root {
 	--print-text-color: #343434;
-	--print-underline-color: #8a8a8a;
-	--print-decorative-color: hsl(0, 0%, 61%);
+	--print-underline-color: #4e4d4d;
+	--print-decorative-color: hsl(0, 0%, 52%);
 }
 
 @media print {
