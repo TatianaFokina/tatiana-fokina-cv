@@ -3,9 +3,8 @@ name: Generate PDF
 on:
   push:
     paths:
-      - "docs/**/*.html"
-      - "docs/**/print-styles.css"
-  workflow_dispatch:
+      - "docs/index.html"
+      - "docs/print-styles.css"
 
 permissions:
   contents: write
