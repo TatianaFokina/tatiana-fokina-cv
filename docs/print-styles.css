@@ -70,11 +70,10 @@
 		font-size: 23px;
 	}
 
-	.header__contacts-list,
-	.main__job {
+	/* .main__job {
 		page-break-inside: avoid;
 		break-inside: avoid;
-	}
+	} */
 
 	/* Body content */
 

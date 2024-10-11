@@ -132,9 +132,6 @@ body {
 }
 
 .main__job-header {
-	display: flex;
-	align-items: center;
-	gap: 3.125rem;
 	margin-bottom: 0.5rem;
 }
 
@@ -147,21 +144,7 @@ body {
 }
 
 .main__job-info {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
 	gap: 0.25rem;
-}
-
-.main__job-info:before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: -40px;
-	width: 30px;
-	height: 2px;
-	background-color: var(--text-color);
 }
 
 .main__job-position {
@@ -170,6 +153,6 @@ body {
 }
 
 .main__job-list {
-	margin-left: 1rem;
+	margin-left: 1.2rem;
 	padding: 0;
 }
