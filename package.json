@@ -1,14 +1,13 @@
 {
   "name": "cv-project",
-  "version": "1.0.0",
+  "author": "Tatiana Fokina",
   "description": "Template for my CV with auto generation PDF version",
-  "main": "index.js",
+  "main": "generate_pdf.js",
+  "license": "ISC",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "generate-pdf": "node generate_pdf.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "fs-extra": "^11.2.0",
     "pdf-lib": "^1.17.1",
