@@ -14,6 +14,12 @@ Install [pnpm](https://pnpm.io/):
 npm install -g pnpm
 ```
 
+The second installation option:
+
+```bash
+pnpm install
+```
+
 For Windows users run the standalone script and open your IDE or PowerShell as administrator (″run as administrator″):
 
 ```bash
