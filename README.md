@@ -4,7 +4,7 @@ This small project includes two versions of my resume: a web page and a PDF.
 
 ## Technologies
 
-HTML, CSS, JavaScript, [Node.js](https://nodejs.org/en/), [GitHub workflows](https://docs.github.com/en/actions/writing-workflows/).
+HTML, [Nunjacks](https://mozilla.github.io/nunjucks/), CSS, JavaScript, [Node.js](https://nodejs.org/en/), [GitHub workflows](https://docs.github.com/en/actions/writing-workflows/).
 
 ## Commands
 
