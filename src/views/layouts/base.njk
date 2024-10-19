@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.html.lang }}">
+	<head>
+		{% include "../partials/meta.njk" %}
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				{% include "../partials/header.njk" %}
+			</header>
+			<main>
+				{% block content %}{% endblock %}
+			</main>
+		</div>
+	</body>
+</html>

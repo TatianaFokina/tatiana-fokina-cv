@@ -26,6 +26,12 @@ For Windows users run the standalone script and open your IDE or PowerShell as a
 iwr https://get.pnpm.io/install.ps1 -useb | iex
 ```
 
+Build HTML:
+
+```bash
+pnpm run build
+```
+
 Generate PDF version based on HTML:
 
 ```bash

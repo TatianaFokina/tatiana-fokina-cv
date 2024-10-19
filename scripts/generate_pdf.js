@@ -5,7 +5,7 @@ const { PDFDocument, PDFName } = require("pdf-lib");
 
 function generateXMPMetadata(metadata) {
 	return `
-			<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
+		<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
 			<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c006 80.159825, 2016/09/16-03:31:08">
 				<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 					<rdf:Description rdf:about=""
@@ -17,10 +17,20 @@ function generateXMPMetadata(metadata) {
 								<rdf:li xml:lang="x-default">${metadata.title}</rdf:li>
 							</rdf:Alt>
 						</dc:title>
+						<dc:creator>
+							<rdf:Seq>
+								<rdf:li>${metadata.creator}</rdf:li>
+							</rdf:Seq>
+						</dc:creator>
+							<dc:description>
+								<rdf:Alt>
+									<rdf:li xml:lang="x-default">${metadata.description}</rdf:li>
+								</rdf:Alt>
+							</dc:description>
 					</rdf:Description>
 				</rdf:RDF>
 			</x:xmpmeta>
-			<?xpacket end="w"?>`.trim();
+		<?xpacket end="w"?>`.trim();
 }
 
 // Create metadata with pdf-lib
@@ -50,13 +60,16 @@ async function addPDFMeta(pdfPath, metadata) {
 
 // Generate PDF with puppeteer
 async function generatePDF() {
-	const htmlPath = path.join(__dirname, "docs", "index.html");
+	const outDir = path.join(__dirname, "..", "docs");
+	const dataDir = path.join(__dirname, "..", "src", "data");
+
+	const htmlPath = path.join(outDir, "index.html");
 	const cssPath = [
-		path.join(__dirname, "docs", "styles.css"),
-		path.join(__dirname, "docs", "print-styles.css"),
+		path.join(outDir, "styles", "styles.css"),
+		path.join(outDir, "styles", "print-styles.css"),
 	];
-	const outputPath = path.join(__dirname, "docs", "tatiana-fokina-cv.pdf");
-	const dataPath = path.join(__dirname, "data.json");
+	const dataPath = path.join(dataDir, "site.json");
+	const outputPath = path.join(outDir, "tatiana-fokina-cv.pdf");
 
 	try {
 		console.log("Generating PDF ⏳");

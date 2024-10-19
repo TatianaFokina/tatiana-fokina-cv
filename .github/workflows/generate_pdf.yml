@@ -4,7 +4,11 @@ on:
   push:
     paths:
       - "docs/index.html"
-      - "docs/print-styles.css"
+      - "docs/styles/styles.css"
+      - "docs/styles/print-styles.css"
+      - "src/data/cv.json"
+      - "src/data/site.json"
+      - "src/views/**"
 
 permissions:
   contents: write
@@ -27,8 +31,19 @@ jobs:
         with:
           version: 9
 
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
       - name: Install dependencies
         run: pnpm install
+
+      - name: Build HTML
+        run: pnpm run build
 
       - name: Generate PDF
         run: pnpm run generate-pdf
