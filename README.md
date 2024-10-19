@@ -4,7 +4,7 @@ This small project includes two versions of my resume: a web page and a PDF.
 
 ## Technologies
 
-HTML, CSS, [Node.js](https://nodejs.org/en/), [GitHub workflows](https://docs.github.com/en/actions/writing-workflows/).
+HTML, CSS, JavaScript, [Node.js](https://nodejs.org/en/), [GitHub workflows](https://docs.github.com/en/actions/writing-workflows/).
 
 ## Commands
 
@@ -53,3 +53,7 @@ Document accessibility issues:
 [Explanations of issues](https://pac.pdf-accessibility.org/en/resources/pac-2024-quality-checks/) 🤔
 
 For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screen readers.
+
+## Licenses
+
+Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
