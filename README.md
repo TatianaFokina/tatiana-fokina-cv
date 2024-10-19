@@ -14,6 +14,12 @@ Install [pnpm](https://pnpm.io/):
 npm install -g pnpm
 ```
 
+The second installation option:
+
+```bash
+pnpm install
+```
+
 For Windows users run the standalone script and open your IDE or PowerShell as administrator (″run as administrator″):
 
 ```bash
@@ -30,14 +36,14 @@ pnpm run generate-pdf
 
 Currently, the PDF version of the CV isn't fully accessible from the box. I'm going to fix it one day but not today 😅
 
-Current document accessibility issues:
+Document accessibility issues:
 
 - ″StructParent″ entry missing the annotation (`<a>`)
 - Path object not tagged (`<b>`, `border`, bullet points)
 - ″Link″ annotation is not nested inside a ″Link″ structure element (`<a>`)
 - Alternative description missing for an annotation (`<a>`)
-- ″LI″ element must content exactly one ″LBody″ element and may contain ″Lbl″ elements.
+- ″LI″ element must content exactly one ″LBody″ element and may contain ″Lbl″ elements (`<ul>`, `<li>`).
 
 [Explanations of issues](https://pac.pdf-accessibility.org/en/resources/pac-2024-quality-checks/) 🤔
 
-For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screenreaders.
+For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screen readers.
