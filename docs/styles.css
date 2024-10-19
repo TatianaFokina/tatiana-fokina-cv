@@ -1,9 +1,9 @@
 :root {
-	--background-color: #8d958a;
-	--background-content-color: #b0b5ad;
-	--text-color: #1f3726;
-	--underline-color: #6a8d74;
-	--decorative-color: #8069a6;
+	--background-color: rgb(69, 73, 72);
+	--background-content-color: rgb(232, 208, 222);
+	--text-color: #454948;
+	--underline-color: #6f7876;
+	--decorative-color: rgb(69, 73, 72);
 }
 
 *,
@@ -24,27 +24,23 @@ body {
 	font-style: normal;
 	line-height: 1.6;
 	color: var(--text-color);
-	background-image: url("./images/bg-pattern.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-color: var(--background-color);
+	background: var(--background-color);
 }
 
 .container {
-	width: 100%;
 	max-width: 960px;
+	width: 100%;
 	margin: 0 auto;
-	padding: 2.5rem 1.875rem;
+	padding: 2.5rem 2.1875rem;
 	background: var(--background-content-color);
-	border: 6px solid var(--decorative-color);
 	border-radius: 10px;
 }
 
 /* Elements */
 
 .link {
-	text-decoration: none;
 	color: var(--text-color);
+	text-decoration: none;
 	border-bottom: 3px solid var(--underline-color);
 }
 
@@ -55,7 +51,7 @@ body {
 	flex-direction: column;
 	padding-bottom: 1.75rem;
 	gap: 1rem;
-	border-bottom: 6px solid var(--decorative-color);
+	border-bottom: 5px solid var(--decorative-color);
 }
 
 .header__contacts-list {
@@ -104,7 +100,7 @@ body {
 	align-items: center;
 	margin-left: auto;
 	gap: 0.25rem;
-	border: 2px solid var(--underline-color);
+	border: 3px solid var(--underline-color);
 	padding: 0.25rem 0.625rem;
 	border-radius: 15px;
 }
@@ -121,35 +117,25 @@ body {
 }
 
 .main__title {
-	margin: 2.5rem 0 1.375rem;
+	margin: 2.5rem 0 1.25rem;
 	font-size: clamp(1.75rem, 1.19vw + 1.423rem, 2.375rem);
 	line-height: 1.263;
 	/* line-height: clamp(2.035rem, 1.837vw + 1.53rem, 3rem); */
 }
 
 .main__job + .main__job {
-	margin-top: 1.125rem;
+	margin-top: 1.0625rem;
 }
 
 .main__job-header {
-	margin-bottom: 0.5rem;
+	margin-bottom: 0.75rem;
 }
 
 .main__job-title {
-	margin: 0;
+	margin-bottom: 0.375rem;
 	font-size: clamp(1.438rem, 1.19vw + 1.11rem, 2.063rem);
-	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.4;
 	/* line-height: clamp(2.156rem, 1.786vw + 1.665rem, 3.094rem); */
-}
-
-.main__job-info {
-	gap: 0.25rem;
-}
-
-.main__job-position {
-	display: inline-block;
-	margin-bottom: 0.5rem;
 }
 
 .main__job-list {
