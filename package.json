@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
-    "puppeteer": "^23.5.1",
-    "pdf-lib": "^1.17.1",
+    "html-minifier-terser": "^7.2.0",
     "nunjucks-to-html": "^1.1.0",
-    "html-minifier-terser": "^7.2.0"
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^23.5.1"
   }
 }
