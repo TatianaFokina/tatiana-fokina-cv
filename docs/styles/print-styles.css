@@ -52,12 +52,12 @@
 		display: initial;
 	}
 
-	.header__contact-link-pdf {
-		display: initial;
+	.header__contacts-link-text {
+		display: none;
 	}
 
-	.header__contact-link-site {
-		display: none;
+	.header__contacts-link-text--pdf {
+		display: initial;
 	}
 
 	.header__title {
@@ -67,7 +67,7 @@
 		color: var(--h1-color);
 	}
 
-	.header__job {
+	.header__position {
 		padding-top: 4px;
 		margin-top: 0;
 		margin-bottom: 12px;
@@ -116,6 +116,7 @@
 
 	/* Elements */
 
+	.header__contacts-link,
 	.link {
 		color: var(--print-text-color);
 		border-width: 1px;
