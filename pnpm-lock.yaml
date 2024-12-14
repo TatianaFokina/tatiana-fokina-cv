@@ -14,6 +14,9 @@ importers:
       html-minifier-terser:
         specifier: ^7.2.0
         version: 7.2.0
+      nunjucks:
+        specifier: ^3.2.4
+        version: 3.2.4
       nunjucks-to-html:
         specifier: ^1.1.0
         version: 1.1.0

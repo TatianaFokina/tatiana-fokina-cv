@@ -12,6 +12,7 @@
   "dependencies": {
     "fs-extra": "^11.2.0",
     "html-minifier-terser": "^7.2.0",
+    "nunjucks": "^3.2.4",
     "nunjucks-to-html": "^1.1.0",
     "pdf-lib": "^1.17.1",
     "puppeteer": "^23.5.1"
