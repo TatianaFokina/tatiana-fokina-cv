@@ -2,6 +2,7 @@ const fs = require("fs-extra");
 const path = require("path");
 const nunjucks = require("nunjucks");
 const { minify } = require("html-minifier-terser");
+const yaml = require('js-yaml');
 
 const srcDir = path.join(__dirname, "..", "src", "views");
 const outDir = path.join(__dirname, "..", "docs");
@@ -13,12 +14,12 @@ nunjucks.configure(srcDir, { autoescape: true });
 // Ensure the output directory exists
 fs.ensureDirSync(outDir);
 
-// Read JSON data
-const cvData = JSON.parse(
-	fs.readFileSync(path.join(dataDir, "cv.json"), "utf8")
+// Read YAML data
+const cvData = yaml.load(
+	fs.readFileSync(path.join(dataDir, "cv.yaml"), "utf8")
 );
-const siteData = JSON.parse(
-	fs.readFileSync(path.join(dataDir, "site.json"), "utf8")
+const siteData = yaml.load(
+	fs.readFileSync(path.join(dataDir, "site.yaml"), "utf8")
 );
 
 // Combine data
