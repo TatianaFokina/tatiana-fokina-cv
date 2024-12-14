@@ -82,7 +82,7 @@ async function generatePDF() {
 
 		const content = `
 		${html}<style>${combinedCss}</style>
-	`;
+		`;
 
 		const metadata = await fs.readJson(dataPath);
 
@@ -93,6 +93,7 @@ async function generatePDF() {
 		await page.pdf({
 			path: outputPath,
 			displayHeaderFooter: false,
+			printBackground: true,
 			preferCSSPageSize: true,
 			pdfA: true,
 			displayTitle: true,

@@ -24,70 +24,70 @@
   "summary": {
     "title": "Summary",
     "paragraphs": [
-      "Expert Accessibility Engineer with 5+ years in Web/Frontend Development, specializes in designing intuitive interfaces that prioritize user needs at the fundamental principle in the development process. Certified professional in accessibility core competencies (CPACC)",
-      "Demonstrates advanced proficiency in web technologies, including HTML, CSS, and JavaScript, coupled with experience in W3C standards, web accessibility specifications and guidelines (WAI-ARIA, WCAG, ATAG)",
-      "Dedicates to creating inclusive digital experiences enabling equal access for all users. Spearheads accessibility initiatives to transform company development processes, prioritizing user-centered design while fostering a culture of lifelong learning and knowledge exchange"
+      "Expert Accessibility Engineer with 5+ years in Web/Frontend Development, specializing in designing intuitive interfaces that prioritize user needs at the fundamental principle in the development process—certified professional in accessibility core competencies (CPACC).",
+      "Demonstrates advanced proficiency in web technologies, including HTML, CSS, and JavaScript. Experiences in W3C standards, web accessibility specifications, and guidelines (WAI-ARIA, WCAG, ATAG).",
+      "Dedicates to creating inclusive digital experiences enabling equal access for all users. Champions accessibility initiatives to transform company development processes, prioritizing user-centered design while fostering a culture of lifelong learning and knowledge exchange."
     ]
   },
   "experience": {
     "title": "Work experience",
     "last": {
       "company": "Doka Guide",
-      "job title": "Editor, accessibility engineer, contributor",
+      "job title": "Editor, accessibility engineer, contributor.",
       "time period": "August 2022 – Present",
       "location": "remote",
       "achievements": [
-        "Architected a content plan a content plan, directed and launched the Accessibility section within a 3-month timeframe",
-        "Collaborated with over 70 contributors to develop articles on accessibility and other web technologies",
-        "Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS",
-        "Executed a WCAG-EM based accessibility audit, resolving 29 issues on the project's website",
-        "Delivered accessibility guidance through 1:1 communications and GitHub pull request reviews",
-        "Collaborated closely with software engineers through weekly agile meetings ensuring alignment on project goals while also enhancing communication strategies between teams contributing to more efficient workflows seen through reduced project timelines"
+        "Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.",
+        "Collaborated with over 70 contributors to develop articles on accessibility and other web technologies.",
+        "Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.",
+        "Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.",
+        "Delivered accessibility guidance through 1:1 communications and GitHub pull request reviews.",
+        "Collaborated closely with editors, designers, and developers through weekly agile meetings, ensuring alignment on project goals while enhancing communication strategy and contributing to more efficient workflows."
       ]
     },
     "previous": {
       "company": "JUG Ru Group",
-      "job title": "Frontend developer",
+      "job title": "Frontend developer.",
       "time period": "May 2019 – June 2020",
       "location": "St. Petersburg, Russia",
       "achievements": [
-        "Led accessibility audits on 10+ conferences sites, identifying and fixing accessibility bugs within 5 months",
-        "Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices and ensuring functionality for 5,000+ users",
-        "Engineered 4 features for users accounts on the ticket platform in collaboration with designers, frontend and backend developers, enhancing user experience and functionality",
-        "Co-developed a live streaming conference platform from concept to launch within a 2-month timespan"
+        "Led accessibility audits on 10+ conference sites, identifying and fixing accessibility bugs improved Lighthouse accessibility scores by 48% across all projects.",
+        "Maintained and modernized 10+ legacy projects, improving performance by 15% through the implementation of recommended coding practices and ensuring functionality for 5,000+ users.",
+        "Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhancing user experience and functionality.",
+        "Co-developed a live streaming conference platform from concept to launch within a 2-month timespan."
       ]
     },
     "initial": {
       "company": "Self-employment",
-      "job title": "Freelance web developer",
+      "job title": "Freelance web developer.",
       "time period": "December 2016 – May 2019",
       "location": "St. Petersburg, Russia",
       "achievements": [
-        "Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence",
-        "Developed 3 templates for MODX and Drupal, simplifying client content management processes",
-        "Accomplished automatic testing across 5 client projects, detecting and rectifying bugs and technical issues while enhancing accessibility features to meet WCAG level AA"
+        "Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.",
+        "Developed 3 templates for MODX and Drupal, simplifying client content management processes.",
+        "Accomplished automatic testing across 5 client projects, detecting and rectifying bugs and technical issues while enhancing accessibility features to meet WCAG 2.1 level AA."
       ]
     }
   },
   "skills": {
     "title": "Skills",
     "skillset 1": {
-      "name": "Languages and frameworks",
-      "set": "HTML, JavaScript (ECMAScript 6), TypeScript, Angular, Next.js, CSS, Sass/SCSS, Stylus, Nunjacks"
+      "name": "Languages and frameworks.",
+      "set": "HTML, JavaScript (ECMAScript 6), TypeScript, Angular, Next.js, CSS, Sass/SCSS, Stylus, Nunjacks."
     },
     "skillset 2": {
-      "name": "Accessibility",
-      "set": "WAI-ARIA 1.2, WCAG 2.2, ATAG 2.0, WCAG-EM 1.0, NVDA, JAWS, VoiceOver (desktop and mobile), TalkBack, Narrator, axe DevTools, Wave Evaluation Tool (WAVE), Accessibility Insights, Section 508, EN 301 549, Web Accessibility Directive (WAD), European Accessibility Act (EAA)"
+      "name": "Accessibility.",
+      "set": "WAI-ARIA 1.2, WCAG 2.2, ATAG 2.0, WCAG-EM 1.0, NVDA, JAWS, VoiceOver (desktop and mobile), TalkBack, axe DevTools, Wave Evaluation Tool (WAVE), Accessibility Insights, accessibility bookmarklets, Section 508, EN 301 549, Web Accessibility Directive (WAD), European Accessibility Act (EAA)."
     },
     "skillset 3": {
-      "name": "Tools and platforms",
-      "set": "Git, GitHub, GitLab, Gulp, Storybook, 11ty, Parcel, Figma"
+      "name": "Tools and platforms.",
+      "set": "Git, GitHub, GitLab, Gulp, Storybook, 11ty, Parcel, Figma."
     }
   },
   "education": {
     "title": "Education",
-    "place": "Saint Petersburg State Institute of Culture",
-    "degree": "Specialist's degree in Integrated Library Systems (ILS)",
+    "place": "St. Petersburg State Institute of Culture",
+    "degree": "Specialist's degree in Integrated Library Systems (ILS).",
     "year": "June 2015",
     "location": "St. Petersburg, Russia"
   },
@@ -95,11 +95,11 @@
     "title": "Other",
     "sections": [
       {
-        "name": "Courses and trainings",
+        "name": "Courses and training.",
         "content": [{"text": "Practical Accessibility course."}]
       },
       {
-        "name": "Community experience",
+        "name": "Community experience.",
         "content": [
           {"text": "Google's Women Techmakers ambassador (WTM), host "},
           {"text": "Inclusive Pineapple", "link": "https://inclusivepineapple.github.io/"},
@@ -109,17 +109,17 @@
         ]
       },
       {
-        "name": "Publications and talks",
+        "name": "Publications and talks.",
         "content": [
           {"text": "Translation of "},
           {"text": "Accessibility Myths project", "link": "https://a11ymyths.com/ru/"},
           {"text": "; post "},
-          {"text": "Understanding skip links", "link": "https://a11y-blog.dev/en/articles/understanding-a-skip-link/"},
+          {"text": "Understanding Skip Links", "link": "https://a11y-blog.dev/en/articles/understanding-a-skip-link/"},
           {"text": " on professional blog; article "},
-          {"text": "What is ARIA live regions", "link": "https://doka.guide/a11y/live-region/"},
+          {"text": "What Are ARIA Live Regions", "link": "https://doka.guide/a11y/live-region/"},
           {"text": " on Doka Guide; talk "},
-          {"text": "Accessibility features and where to find them", "link": "https://youtu.be/s8JwoE91xcA/"},
-          {"text": " at Accessibility Conference."}
+          {"text": "Accessibility and Typography", "link": "https://youtu.be/F64bGVrI4TY?si=7tzAj-u0EA0211K3"},
+          {"text": " at Tbilisi A11y & UX Day."}
         ]
       }
     ]
