@@ -4,7 +4,7 @@
 	--h3-color: rgb(60, 60, 60);
 	--text-color: rgb(65, 65, 65);
 	--underline-color: rgb(138, 138, 138);
-	--border-color: rgb(198, 208, 228);
+	--border-color: rgb(214, 159, 193);
 }
 
 @media print {
@@ -17,7 +17,7 @@
 		margin: 0;
 		font-family: Arial, sans-serif;
 		font-size: 16px;
-		line-height: 1.5;
+		line-height: 24px;
 		color: var(--text-color);
 		background: none;
 	}
@@ -31,95 +31,94 @@
 
 	.header {
 		display: block;
-		margin-bottom: 20px;
-		padding-top: 5px;
-		padding-left: 24px;
-		padding-right: 24px;
-		padding-bottom: 12px;
+		margin-bottom: 26px;
+		padding: 0 24px;
 		border-left: 5px solid var(--border-color);
-		border-bottom: 0;
 	}
 
-	.header__link {
-		display: none;
+	.header__title {
+		margin-top: 0;
+		margin-bottom: 4px;
+		font-size: 31px;
+		line-height: 38px;
+		color: var(--h1-color);
+	}
+
+	.header__position {
+		margin-top: 0;
+		padding-top: 3px;
+		margin-bottom: 13px;
+		font-size: 23px;
+		line-height: 37px;
+		color: var(--h2-color);
 	}
 
 	.header__contacts-list {
 		gap: 18px;
 	}
 
-	.header__desc {
-		display: initial;
-	}
-
+	.header__link,
 	.header__contacts-link-text {
 		display: none;
 	}
 
+	.header__desc,
 	.header__contacts-link-text--pdf {
 		display: initial;
 	}
 
-	.header__title {
-		margin: 0;
-		font-size: 31px;
-		line-height: 44px;
-		color: var(--h1-color);
-	}
-
-	.header__position {
-		padding-top: 4px;
-		margin-top: 0;
-		margin-bottom: 12px;
-		font-size: 25px;
-		line-height: 44px;
-		color: var(--h2-color);
-	}
-
 	/* Body content */
 
+	.main__divider {
+		display: initial;
+		margin-top: 26px;
+		margin-bottom: -26px;
+		border: none;
+		border-top: 2px solid var(--border-color);
+	}
+
 	.main__title {
-		padding-top: 16px;
 		margin-top: 0;
-		margin-bottom: 8px;
-		font-size: 25px;
-		line-height: 48px;
+		padding-top: 35px;
+		margin-bottom: 9px;
+		font-size: 23px;
+		line-height: 34px;
 		color: var(--h2-color);
 	}
 
-	.main__text {
-		margin-top: 7px;
-		padding-bottom: 17px;
+	.main__text,
+	.activity__position {
+		padding-top: 4px;
+		margin-bottom: 8px;
 	}
 
-	.main__job-title {
-		padding-top: 5px;
-		margin-bottom: 19px;
-		font-size: 20px;
-		line-height: 24px;
-		color: var(--h3-color);
-	}
-
-	.main__job-list {
-		margin-top: 17px;
-		margin-left: 17px;
-	}
-
-	.rename-this-class {
+	.activity__header-wrapper {
 		gap: 24px;
 	}
 
-	.main__job-info {
-		font-size: 15px;
-		line-height: 1.5;
+	.activity__place {
+		margin-top: 0;
+		padding-top: 18px;
+		margin-bottom: 8px;
+		line-height: 22px;
+		font-size: 18px;
+		color: var(--h3-color);
+	}
+
+	.activity__list {
+		margin-top: 0;
+		padding-top: 2px;
+		margin-bottom: 8px;
+		margin-left: 28px;
 	}
 
 	/* Elements */
 
+	.header__link,
 	.header__contacts-link,
-	.link {
+	.main__link {
 		color: var(--print-text-color);
-		border-width: 1px;
-		border-color: var(--underline-color);
+		text-decoration: var(--underline-color) underline;
+		border: 0;
 	}
 }

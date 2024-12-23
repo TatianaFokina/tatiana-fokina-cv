@@ -45,9 +45,13 @@ body {
 	border-radius: 10px;
 }
 
+.main__divider {
+	display: none;
+}
+
 /* Elements */
 
-.rename-this-class {
+.activity__header-wrapper {
 	display: flex;
 	align-items: baseline;
 	gap: 1.25rem;
@@ -55,7 +59,7 @@ body {
 
 .header__link,
 .header__contacts-link,
-.link {
+.main__link {
 	text-decoration: none;
 	color: var(--text-color);
 	border-bottom: 3px solid var(--underline-color);
@@ -67,17 +71,17 @@ body {
 	/* height: 100%; */
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 1.75rem;
+	/* padding-bottom: 1.75rem; */
 	/* gap: 1rem; */
-	border-bottom: 5px solid var(--decorative-color);
+	/* border-bottom: 5px solid var(--decorative-color); */
 }
 
 .header__contacts-list {
 	display: inline-flex;
 	flex-wrap: wrap;
 	align-items: start;
-	margin: 0;
-	padding: 0;
+	/* margin: 0;
+	padding: 0; */
 	gap: 1.125rem;
 	list-style: none;
 }
@@ -143,12 +147,8 @@ body {
 	flex-direction: column;
 }
 
-.main__text:not(:last-of-type) {
-	padding-bottom: 0.625rem;
-}
-
 .main__title {
-	margin: 2.5rem 0 1.25rem;
+	/* margin: 2.5rem 0 1.25rem; */
 	font-size: clamp(1.75rem, 1.19vw + 1.423rem, 2.375rem);
 	font-style: normal;
 	font-weight: 600;
@@ -156,16 +156,8 @@ body {
 	/* line-height: clamp(2.035rem, 1.837vw + 1.53rem, 3rem); */
 }
 
-.main__job + .main__job {
-	margin-top: 1.0625rem;
-}
-
-/* .main__job-header {
-	margin-bottom: 0.75rem;
-} */
-
-.main__job-title {
-	margin-bottom: 0.375rem;
+.activity__place {
+	/* margin-bottom: 0.375rem; */
 	font-size: clamp(1.438rem, 1.19vw + 1.11rem, 2.063rem);
 	font-style: normal;
 	font-weight: 600;
@@ -173,8 +165,8 @@ body {
 	/* line-height: clamp(2.156rem, 1.786vw + 1.665rem, 3.094rem); */
 }
 
-.main__job-list {
+/* .activity__list {
 	margin-top: 1rem;
 	margin-left: 1.2rem;
 	padding: 0;
-}
+} */
