@@ -4,7 +4,7 @@
 	--h3-color: rgb(60, 60, 60);
 	--text-color: rgb(65, 65, 65);
 	--underline-color: rgb(138, 138, 138);
-	--border-color: rgb(14, 140, 90);
+	--border-color: rgb(71, 224, 135);
 }
 
 @media print {
@@ -74,7 +74,7 @@
 		margin-top: 26px;
 		margin-bottom: -26px;
 		border: none;
-		border-top: 2px solid var(--border-color);
+		border-top: 1px solid var(--border-color);
 	}
 
 	.main__title {
