@@ -3,72 +3,52 @@
 		<h1 class="header__title" aria-describedby="job-title">
 			{{ cv.personal["candidate name"] }}
 		</h1>
-		<h2 class="header__job" id="job-title">
+		<h2 class="header__position" id="job-title">
 			{{ cv.personal["job title"] }}
 		</h2>
 		<a
-			class="header__link link"
+			class="header__link"
 			href="{{ cv.personal.pdf["url"] }}"
 		>
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="2"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				aria-hidden="true"
-			>
-				<path
-					d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"
-				/>
-				<path d="M14 2v4a2 2 0 0 0 2 2h4"/>
-				<path d="M10 9H8"/>
-				<path d="M16 13H8"/>
-				<path d="M16 17H8"/>
-			</svg>
 			{{ cv.personal.pdf["label"] }}
 		</a>
 	</div>
 	<div class="header__contacts">
 		<nav>
 			<ul class="header__contacts-list">
-				<li class="header__contact-item header__contact-item--location">
+				<li class="header__contacts-item">
 					{{ cv.personal["location"] }}
 				</li>
-				<li class="header__contact-item">
+				<li class="header__contacts-item">
 					<a
-						class="header__contact-link link"
+						class="header__contacts-link"
 						href="mailto:{{ cv.personal.email["address"] }}"
 					>
 						{{ cv.personal.email["address"] }}
 					</a>
 				</li>
-				<li class="header__contact-item">
+				<li class="header__contacts-item">
 					<a
-						class="header__contact-link link"
+						class="header__contacts-link"
 						href="{{ cv.personal.link["url"] }}"
 					>
-						<span class="header__contact-link-site">
+						<span class="header__contacts-link-text">
 							{{ cv.personal.link["site label"] }}
 						</span>
-						<span class="header__contact-link-pdf">
+						<span class="header__contacts-link-text header__contacts-link-text--pdf">
 							{{ cv.personal.link["pdf label"] }}
 						</span>
 					</a>
 				</li>
-				<li class="header__contact-item">
+				<li class="header__contacts-item">
 					<a
-						class="header__contact-link link"
+						class="header__contacts-link"
 						href="{{ cv.personal.portfolio["url"] }}"
 					>
-						<span class="header__contact-link-site">
+						<span class="header__contacts-link-text">
 							{{ cv.personal.portfolio["site label"] }}
 						</span>
-						<span class="header__contact-link-pdf">
+						<span class="header__contacts-link-text header__contacts-link-text--pdf">
 							{{ cv.personal.portfolio["pdf label"] }}
 						</span>
 					</a>
