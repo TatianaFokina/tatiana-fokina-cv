@@ -2,14 +2,32 @@ const fs = require("fs-extra");
 const path = require("path");
 const nunjucks = require("nunjucks");
 const { minify } = require("html-minifier-terser");
-const yaml = require('js-yaml');
+const yaml = require("js-yaml");
 
 const srcDir = path.join(__dirname, "..", "src", "views");
 const outDir = path.join(__dirname, "..", "docs");
 const dataDir = path.join(__dirname, "..", "src", "data");
 
 // Configure Nunjucks
-nunjucks.configure(srcDir, { autoescape: true });
+const env = nunjucks.configure(srcDir, { autoescape: true });
+
+// Convert URLs in text to HTML links
+env.addFilter("urlize", function (text) {
+	if (!text || typeof text !== "string") {
+		return "";
+	}
+
+	return text.replace(
+		/\[([^\]]+)\]\(([^)]+)\)(?:{([^}]+)})?/g,
+		function (match, text, url, classes) {
+			const existingClasses = classes ? classes.trim() : "";
+			const allClasses = existingClasses
+				? `main__link ${existingClasses}`
+				: "main__link";
+			return `<a href="${url}" class="${allClasses}">${text}</a>`;
+		}
+	);
+});
 
 // Ensure the output directory exists
 fs.ensureDirSync(outDir);

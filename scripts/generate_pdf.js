@@ -1,6 +1,7 @@
 const fs = require("fs-extra");
 const path = require("path");
 const puppeteer = require("puppeteer");
+const yaml = require("js-yaml");
 const { PDFDocument, PDFName } = require("pdf-lib");
 
 function generateXMPMetadata(metadata) {
@@ -84,7 +85,8 @@ async function generatePDF() {
 		${html}<style>${combinedCss}</style>
 		`;
 
-		const metadata = await fs.readJson(dataPath);
+		const yamlFile = await fs.readFile(dataPath, "utf8");
+		const metadata = yaml.load(yamlFile);
 
 		const browser = await puppeteer.launch();
 		const page = await browser.newPage();

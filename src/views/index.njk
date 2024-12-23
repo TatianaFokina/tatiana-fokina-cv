@@ -98,13 +98,9 @@
 			</h2>
 			{% for section in cv.other.sections %}
 				<p class="main__text">
-					<b>{{ section.name }}</b> {% for item in section.content -%}
-						{%- if item.link -%}
-							<a class="main__link" href="{{ item.link }}">{{ item.text }}</a>
-						{%- else -%}
-							{{ item.text }}
-						{%- endif -%}
-					{%- endfor %}
+					<b>{{ section.name }}</b>
+					{% set content = section.content | replace("\n", " ") %}
+					{{ content | urlize | safe }}
 				</p>
 			{% endfor %}
 		</section>
