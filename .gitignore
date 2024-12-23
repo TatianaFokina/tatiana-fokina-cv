@@ -7,3 +7,4 @@
 /Thumbs.db/
 !cv.json
 !site.json
+/venv
