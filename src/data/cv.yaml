@@ -102,25 +102,25 @@ other:
     - text: Practical Accessibility course.
   - name: Community experience.
     content:
-    - text: 'Google''s Women Techmakers ambassador (WTM), host '
+    - text: Google''s Women Techmakers ambassador (WTM), host
     - text: Inclusive Pineapple
       link: https://inclusivepineapple.github.io/
-    - text: " podcast, organizer of "
+    - text: podcast, organizer of
     - text: pitera11y_meetup
       link: https://www.youtube.com/playlist?list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB/
-    - text: " and Doka Guide meetup."
+    - text: and Doka Guide meetup.
   - name: Publications and talks.
     content:
-    - text: 'Translation of '
+    - text: Translation of
     - text: Accessibility Myths project
       link: https://a11ymyths.com/ru/
-    - text: "; post "
+    - text: ; post
     - text: Understanding Skip Links
       link: https://a11y-blog.dev/en/articles/understanding-a-skip-link/
-    - text: " on professional blog; article "
+    - text: on professional blog; article
     - text: What Are ARIA Live Regions
       link: https://doka.guide/a11y/live-region/
-    - text: " on Doka Guide; talk "
+    - text: on Doka Guide; talk
     - text: Accessibility and Typography
       link: https://youtu.be/F64bGVrI4TY?si=7tzAj-u0EA0211K3
-    - text: " at Tbilisi A11y & UX Day."
+    - text: at Tbilisi A11y & UX Day.

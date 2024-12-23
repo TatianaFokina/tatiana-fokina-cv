@@ -68,7 +68,7 @@ async function generatePDF() {
 		path.join(outDir, "styles", "styles.css"),
 		path.join(outDir, "styles", "print-styles.css"),
 	];
-	const dataPath = path.join(dataDir, "site.json");
+	const dataPath = path.join(dataDir, "site.yaml");
 	const outputPath = path.join(outDir, "tatiana-fokina-cv.pdf");
 
 	try {

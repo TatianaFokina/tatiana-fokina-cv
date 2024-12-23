@@ -6,8 +6,8 @@ on:
       - "docs/index.html"
       - "docs/styles/styles.css"
       - "docs/styles/print-styles.css"
-      - "src/data/cv.json"
-      - "src/data/site.json"
+      - "src/data/cv.yaml"
+      - "src/data/site.yaml"
       - "src/views/**"
 
 permissions:
