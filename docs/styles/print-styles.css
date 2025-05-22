@@ -16,8 +16,7 @@
 	body {
 		margin: 0;
 		font-family: Arial, sans-serif;
-		font-size: 16px;
-		line-height: 24px;
+		font-weight: 400;
 		color: var(--text-color);
 		background: none;
 	}
@@ -29,22 +28,21 @@
 
 	/* Header */
 
-	.header {
+	.cv-header {
 		display: block;
 		margin-bottom: 26px;
 		padding: 0 24px;
 		border-left: 6px solid var(--border-color);
 	}
 
-	.header__title {
-		margin-top: 0;
+	.cv-header__name {
 		margin-bottom: 4px;
 		font-size: 31px;
 		line-height: 38px;
 		color: var(--h1-color);
 	}
 
-	.header__position {
+	.cv-header__position {
 		margin-top: 0;
 		padding-top: 3px;
 		margin-bottom: 13px;
@@ -53,23 +51,30 @@
 		color: var(--h2-color);
 	}
 
-	.header__contacts-list {
+	.cv-header__contacts {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		background: none;
+	}
+
+	.contacts__list {
 		gap: 18px;
 	}
 
-	.header__link,
-	.header__contacts-link-text {
+	.cv-header__pdf-link,
+	.contacts__text {
 		display: none;
 	}
 
-	.header__desc,
-	.header__contacts-link-text--pdf {
+	.cv-header__content,
+	.contacts__text--print {
 		display: initial;
 	}
 
 	/* Body content */
 
-	.main__divider {
+	.cv__divider {
 		display: initial;
 		margin-top: 26px;
 		margin-bottom: -26px;
@@ -77,35 +82,54 @@
 		border-top: 1px solid var(--border-color);
 	}
 
-	.main__title {
-		margin-top: 0;
+	.cv__heading {
 		padding-top: 35px;
 		margin-bottom: 9px;
 		font-size: 23px;
 		line-height: 34px;
 		color: var(--h2-color);
+		border-bottom: 0;
 	}
 
-	.main__text,
-	.activity__position {
+	.cv__text,
+	.cv__link,
+	.cv__position,
+	.cv__metadata-item,
+	.cv__achievements,
+	.cv-header__pdf-link,
+	.contacts__link  {
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.cv__text,
+	.cv__position {
 		padding-top: 4px;
 		margin-bottom: 8px;
+		color: inherit;
 	}
 
-	.activity__header-wrapper {
+	.cv__job-info {
+		display: flex;
+		align-items: baseline;
 		gap: 24px;
 	}
 
-	.activity__place {
-		margin-top: 0;
+	.cv__company {
 		padding-top: 18px;
 		margin-bottom: 8px;
-		line-height: 22px;
 		font-size: 18px;
+		line-height: 22px;
 		color: var(--h3-color);
 	}
 
-	.activity__list {
+	.cv__metadata-item {
+		padding-bottom: 0;
+		font-family: inherit;
+		color: var(--h3-color);
+	}
+
+	.cv__achievements {
 		margin-top: 0;
 		padding-top: 2px;
 		margin-bottom: 8px;
@@ -114,9 +138,9 @@
 
 	/* Elements */
 
-	.header__link,
-	.header__contacts-link,
-	.main__link {
+	.cv-header__pdf-link,
+	.contacts__link,
+	.cv__link {
 		color: var(--print-text-color);
 		text-decoration: var(--underline-color) underline;
 		border: 0;
