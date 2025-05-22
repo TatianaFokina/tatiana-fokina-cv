@@ -61,6 +61,8 @@
 		gap: 18px;
 	}
 
+	/* Web version styles reset */
+
 	.cv-header__pdf-link,
 	.contacts__text {
 		display: none;
@@ -71,7 +73,7 @@
 		display: initial;
 	}
 
-	/* Body content */
+	/* Main content */
 
 	.cv__divider {
 		display: initial;
@@ -90,7 +92,7 @@
 		border-bottom: 0;
 	}
 
-	.contacts__link,
+	.contacts__item,
 	.cv__link,
 	.cv__text,
 	.cv__position,
@@ -125,6 +127,10 @@
 		padding-bottom: 0;
 		font-family: inherit;
 		color: var(--text-color-light);
+	}
+
+	.cv__metadata-item:not(:last-child) {
+		padding-right: 0;
 	}
 
 	.cv__achievements {
