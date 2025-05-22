@@ -22,8 +22,8 @@ env.addFilter("urlize", function (text) {
 		function (match, text, url, classes) {
 			const existingClasses = classes ? classes.trim() : "";
 			const allClasses = existingClasses
-				? `main__link ${existingClasses}`
-				: "main__link";
+				? `cv__link ${existingClasses}`
+				: "cv__link";
 			return `<a href="${url}" class="${allClasses}">${text}</a>`;
 		}
 	);
