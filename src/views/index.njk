@@ -1,46 +1,46 @@
 {% extends "./layouts/base.njk" %}
 
 {% block content %}
-	<div class="main">
-		<section class="main__section">
+	<div class="cv">
+		<section class="cv__section">
 			{% for paragraph in cv.summary.paragraphs %}
-				<p class="main__text">
+				<p class="cv__text">
 					{{ paragraph }}
 				</p>
 			{% endfor %}
 		</section>
 
-		<hr class="main__divider">
+		<hr class="cv__divider">
 
-		<section class="main__section" aria-labelledby="experience">
-			<h2 class="main__title" id="experience">
+		<section class="cv__section" aria-labelledby="experience">
+			<h2 class="cv__heading" id="experience">
 				{{ cv.experience.title }}
 			</h2>
 			{% for job in ["last", "previous", "initial"] %}
 				{% if cv.experience[job] %}
-					<article class="activity">
-						<header class="activity__header">
-							<div class="activity__header-wrapper">
-								<h3 class="activity__place">
+					<article class="cv__job">
+						<header class="cv__job-header">
+							<div class="cv__job-info">
+								<h3 class="cv__company">
 									{{ cv.experience[job].company }}
 								</h3>
-								<div class="activity__details">
-									<span class="activity__details-item">
+								<div class="cv__metadata">
+									<span class="cv__metadata-item">
 										{{ cv.experience[job]["time period"] }},
 									</span>
-									<span class="activity__details-item">
+									<span class="cv__metadata-item">
 										{{ cv.experience[job].location }}
 									</span>
 								</div>
 							</div>
-							<p class="activity__position">
+							<p class="cv__position">
 								{{ cv.experience[job]["job title"] }}
 							</p>
 						</header>
-						<ul class="activity__list">
+						<ul class="cv__achievements">
 							{% for achievement in cv.experience[job].achievements %}
 								{% if achievement %}
-									<li class="activity__list-item">
+									<li class="cv__achievement">
 										{{ achievement }}
 									</li>
 								{% endif %}
@@ -51,53 +51,53 @@
 			{% endfor %}
 		</section>
 
-		<hr class="main__divider">
+		<hr class="cv__divider">
 
-		<section class="main__section" aria-labelledby="skills">
-			<h2 class="main__title" id="skills">
+		<section class="cv__section" aria-labelledby="skills">
+			<h2 class="cv__heading" id="skills">
 				{{ cv.skills.title }}
 			</h2>
 			{% for subgroup in ["skillset 1", "skillset 2", "skillset 3", "skillset 4", "skillset 5"] %}
 				{% if cv.skills[subgroup] %}
-					<p class="main__text">
+					<p class="cv__text">
 						<b>{{ cv.skills[subgroup].name }}</b> {{ cv.skills[subgroup].set }}
 					</p>
 				{% endif %}
 			{% endfor %}
 		</section>
 
-		<hr class="main__divider">
+		<hr class="cv__divider">
 
-		<section class="main__section" aria-labelledby="education">
-			<h2 class="main__title" id="education">
+		<section class="cv__section" aria-labelledby="education">
+			<h2 class="cv__heading" id="education">
 				{{ cv.education.title }}
 			</h2>
-			<article class="activity">
-				<header class="activity__header">
-					<div class="activity__header-wrapper">
-						<h3 class="activity__place">
+			<article class="cv__job">
+				<header class="cv__job-header">
+					<div class="cv__job-info">
+						<h3 class="cv__company">
 							{{ cv.education.place }}
 						</h3>
-						<div class="activity__details">
-							<span class="details__item">{{ cv.education.year }},</span>
-							<span class="details__item">{{ cv.education.location }}</span>
+						<div class="cv__metadata">
+							<span class="cv__metadata-item">{{ cv.education.year }},</span>
+							<span class="cv__metadata-item">{{ cv.education.location }}</span>
 						</div>
 					</div>
-					<p class="activity__position">
+					<p class="cv__position">
 						{{ cv.education.degree }}
 					</p>
 				</header>
 			</article>
 		</section>
 
-		<hr class="main__divider">
+		<hr class="cv__divider">
 
-		<section class="main__section" aria-labelledby="other">
-			<h2 class="main__title" id="other">
+		<section class="cv__section" aria-labelledby="other">
+			<h2 class="cv__heading" id="other">
 				{{ cv.other.title }}
 			</h2>
 			{% for section in cv.other.sections %}
-				<p class="main__text">
+				<p class="cv__text">
 					<b>{{ section.name }}</b>
 					{% set content = section.content | replace("\n", " ") %}
 					{{ content | urlize | safe }}

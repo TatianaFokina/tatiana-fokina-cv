@@ -1,59 +1,57 @@
-<div class="header">
-	<div class="header__desc">
-		<h1 class="header__title" aria-describedby="job-title">
+<div class="cv-header">
+	<div class="cv-header__content">
+		<h1 class="cv-header__name" aria-describedby="job-title">
 			{{ cv.personal["candidate name"] }}
 		</h1>
-		<h2 class="header__position" id="job-title">
+		<h2 class="cv-header__position" id="job-title">
 			{{ cv.personal["job title"] }}
 		</h2>
 		<a
-			class="header__link"
+			class="cv-header__pdf-link"
 			href="{{ cv.personal.pdf["url"] }}"
 		>
 			{{ cv.personal.pdf["label"] }}
 		</a>
 	</div>
-	<div class="header__contacts">
-		<nav>
-			<ul class="header__contacts-list">
-				<li class="header__contacts-item">
+		<nav class="cv-header__contacts">
+			<ul class="contacts__list">
+				<li class="contacts__item">
 					{{ cv.personal["location"] }}
 				</li>
-				<li class="header__contacts-item">
+				<li class="contacts__item">
 					<a
-						class="header__contacts-link"
+						class="contacts__link"
 						href="mailto:{{ cv.personal.email["address"] }}"
 					>
 						{{ cv.personal.email["address"] }}
 					</a>
 				</li>
-				<li class="header__contacts-item">
+				<li class="contacts__item">
 					<a
-						class="header__contacts-link"
+						class="contacts__link"
 						href="{{ cv.personal.link["url"] }}"
 					>
-						<span class="header__contacts-link-text">
+						<span class="contacts__text">
 							{{ cv.personal.link["site label"] }}
 						</span>
-						<span class="header__contacts-link-text header__contacts-link-text--pdf">
+						<span class="contacts__text contacts__text--print">
 							{{ cv.personal.link["pdf label"] }}
 						</span>
 					</a>
 				</li>
-				<li class="header__contacts-item">
+				<li class="contacts__item">
 					<a
-						class="header__contacts-link"
+						class="contacts__link"
 						href="{{ cv.personal.portfolio["url"] }}"
 					>
-						<span class="header__contacts-link-text">
+						<span class="contacts__text">
 							{{ cv.personal.portfolio["site label"] }}
 						</span>
-						<span class="header__contacts-link-text header__contacts-link-text--pdf">
+						<span class="contacts__text contacts__text--print">
 							{{ cv.personal.portfolio["pdf label"] }}
 						</span>
 					</a>
 				</li>
 			</ul>
 		</nav>
-	</div>
 </div>
