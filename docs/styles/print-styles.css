@@ -45,7 +45,7 @@
 	.cv-header__position {
 		margin-top: 0;
 		padding-top: 3px;
-		margin-bottom: 13px;
+		margin-bottom: 16px;
 		font-size: 20px;
 		font-weight: 500;
 		line-height: 37px;
@@ -56,6 +56,7 @@
 		margin: 0;
 		padding: 0;
 		border: 0;
+		gap: 5px;
 		background: none;
 	}
 
@@ -89,7 +90,7 @@
 		--border-width: 0;
 
 		padding-top: 35px;
-		margin-bottom: 9px;
+		margin-bottom: 26px;
 		font-size: 23px;
 		line-height: 34px;
 		color: var(--text-color-dark);
