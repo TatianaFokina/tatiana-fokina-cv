@@ -1,17 +1,17 @@
 <div class="cv-header">
 	<div class="cv-header__content">
-		<h1 class="cv-header__name" aria-describedby="job-title">
-			{{ cv.personal["candidate name"] }}
-		</h1>
-		<h2 class="cv-header__position" id="job-title">
-			{{ cv.personal["job title"] }}
-		</h2>
 		<a
 			class="cv-header__pdf-link"
 			href="{{ cv.personal.pdf["url"] }}"
 		>
 			{{ cv.personal.pdf["label"] }}
 		</a>
+		<h1 class="cv-header__name" aria-describedby="job-title">
+			{{ cv.personal["candidate name"] }}
+		</h1>
+		<h2 class="cv-header__position" id="job-title">
+			{{ cv.personal["job title"] }}
+		</h2>
 	</div>
 		<nav class="cv-header__contacts">
 			<ul class="contacts__list">
