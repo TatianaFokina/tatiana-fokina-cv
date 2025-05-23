@@ -69,14 +69,12 @@ body {
 	padding-top: 0.9em;
 	margin-bottom: 0.2em;
 	font-size: 3.36em;
-	line-height: 1.42em;
-	font-style: normal;
 	font-weight: 700;
+	line-height: 1.12em;
 }
 
 .cv-header__position {
 	font-size: 1.7em;
-	font-style: normal;
 	font-weight: 500;
 	line-height: 1.40;
 	color: var(--text-color-medium);
@@ -139,7 +137,6 @@ body {
 	margin-bottom: 0.340em;
 	padding-bottom: var(--border-width);
 	font-size: 2.27em;
-	font-style: normal;
 	font-weight: 600;
 	line-height: 1.40;
 	color: var(--text-color-medium);
@@ -147,8 +144,8 @@ body {
 }
 
 .cv__text {
-	padding-top: 0.455em;
-	margin-bottom: 1.14em;
+	padding-top: 0.3em;
+	margin-bottom: 0.6em;
 	font-size: 1em;
 	line-height: 1.6;
 }
