@@ -29,7 +29,7 @@
 
 	.cv-header {
 		display: block;
-		margin-bottom: 26px;
+		margin-bottom: 40px;
 		padding: 0 24px;
 		border-left: 6px solid var(--accent-color);
 	}
@@ -87,10 +87,8 @@
 	}
 
 	.cv__heading {
-		--border-width: 0;
-
 		padding-top: 35px;
-		margin-bottom: 26px;
+		margin-bottom: 9px;
 		font-size: 23px;
 		line-height: 34px;
 		color: var(--text-color-dark);
@@ -129,9 +127,12 @@
 		color: var(--text-color-light);
 	}
 
+	.cv__company--print {
+		padding-top: 0;
+	}
+
 	.cv__metadata-item {
 		padding-bottom: 0;
-		font-family: inherit;
 		color: var(--text-color-light);
 	}
 
