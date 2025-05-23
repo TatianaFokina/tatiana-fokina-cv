@@ -35,6 +35,7 @@
 	}
 
 	.cv-header__name {
+		padding-top: 0;
 		margin-bottom: 4px;
 		font-size: 31px;
 		line-height: 38px;
@@ -84,6 +85,8 @@
 	}
 
 	.cv__heading {
+		--border-width: 0;
+
 		padding-top: 35px;
 		margin-bottom: 9px;
 		font-size: 23px;
