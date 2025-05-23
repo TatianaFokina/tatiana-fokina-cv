@@ -1,12 +1,12 @@
 :root {
-	--primary-color: hsl(30 100% 98%);
-	--secondary-color: hsl(325 52% 81%);
-	--accent-color: hsl(166, 100%, 30%);
+	--primary-color: hsl(41 82% 87%);
+	--secondary-color: hsl(338 98%, 80%);
+	--accent-color: hsl(201 100% 49%);
 	--text-color-dark: hsl(161 2% 12%);
 	--text-color-medium: hsl(161 2% 17%);
 	--text-color-light: hsl(161 2% 26%);
 	--background-gradient: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-	--border-color: hsl(0, 0%, 90%);
+	--border-color: hsla(0, 0%, 16%, 0.073);
 
 	--step--2: clamp(0.3889rem, 0.3226rem + 0.3119vw, 0.5rem);
 	--step--1: clamp(0.5833rem, 0.4839rem + 0.4678vw, 0.75rem);
@@ -131,7 +131,7 @@ body {
 }
 
 .cv__heading {
-	--border-width: 3px;
+	--border-width: 2px;
 
 	padding-top: 1.06em;
 	margin-bottom: 0.340em;
@@ -192,14 +192,6 @@ body {
 	border-bottom: 3px solid var(--secondary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.cv-header__pdf-link,
-	.contacts__link,
-	.cv__link {
-		transition: background-color .15s ease-in-out;
-	}
-}
-
 .cv-header__pdf-link:hover {
 	background-color: var(--secondary-color);
 	border: 3px solid var(--accent-color);
@@ -214,5 +206,17 @@ body {
 .cv-header__pdf-link:focus-visible,
 .contacts__link:focus-visible,
 .cv__link:focus-visible {
-	outline: 4px solid var(--accent-color);
+	outline: 3px solid var(--accent-color);
+}
+
+/* Animation */
+
+@media (prefers-reduced-motion: no-preference) {
+	.cv-header__pdf-link,
+	.contacts__link,
+	.cv__link {
+		transition:
+			background-color .15s ease-in-out,
+			border-color .15s ease-in-out;
+	}
 }

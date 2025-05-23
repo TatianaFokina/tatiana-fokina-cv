@@ -3,7 +3,7 @@
 	--text-color-medium: rgb(65, 65, 65);
 	--text-color-light: rgb(60, 60, 60);
 	--underline-color: rgb(138, 138, 138);
-	--accent-color: rgb(71, 224, 135);
+	--accent-color: rgb(0, 162, 250);
 }
 
 @media print {
