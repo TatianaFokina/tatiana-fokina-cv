@@ -63,59 +63,68 @@ async function addPDFMeta(pdfPath, metadata) {
 async function generatePDF() {
 	const outDir = path.join(__dirname, "..", "docs");
 	const dataDir = path.join(__dirname, "..", "src", "data");
-
-	const htmlPath = path.join(outDir, "index.html");
-	const cssPath = [
-		path.join(outDir, "styles", "styles.css"),
-		path.join(outDir, "styles", "print-styles.css"),
-	];
-	const dataPath = path.join(dataDir, "site.yaml");
-	const outputPath = path.join(outDir, "tatiana-fokina-cv.pdf");
+	const cvDir = path.join(dataDir, "cv");
+	const siteDir = path.join(dataDir, "site.yaml");
 
 	try {
-		console.log("Generating PDF ⏳");
+			// Get all CV YAML files
+			const cvFiles = fs.readdirSync(cvDir).filter(file => file.endsWith('.yaml'));
 
-		const html = await fs.readFile(htmlPath, "utf8");
-		const css = await Promise.all(
-			cssPath.map((path) => fs.readFile(path, "utf8"))
-		);
-		const combinedCss = css.join("\n");
+			for (const cvFile of cvFiles) {
+					const version = path.basename(cvFile, '.yaml');
+					const htmlPath = path.join(outDir, `index-${version}.html`);
+					const cssPath = [
+							path.join(outDir, "styles", "styles.css"),
+							path.join(outDir, "styles", "print-styles.css"),
+					];
 
-		const content = `
-		${html}<style>${combinedCss}</style>
-		`;
+					// Create version-specific PDF filename (e.g., FokinaCV_2025v1.0.pdf)
+					const pdfFileName = `FokinaCV_${version}.pdf`;
+					const outputPath = path.join(outDir, "pdf", pdfFileName);
 
-		const yamlFile = await fs.readFile(dataPath, "utf8");
-		const metadata = yaml.load(yamlFile);
+					console.log(`Generating PDF for version ${version} ⏳`);
 
-		const browser = await puppeteer.launch();
-		const page = await browser.newPage();
+					const html = await fs.readFile(htmlPath, "utf8");
+					const css = await Promise.all(
+							cssPath.map((path) => fs.readFile(path, "utf8"))
+					);
+					const combinedCss = css.join("\n");
 
-		await page.setContent(content, { waitUntil: "networkidle0" });
-		await page.pdf({
-			path: outputPath,
-			displayHeaderFooter: false,
-			printBackground: true,
-			preferCSSPageSize: true,
-			pdfA: true,
-			displayTitle: true,
-			outline: true,
-			annotating: true,
-			tagged: true,
-			generateTaggedPDF: true,
-			structureTreeRoot: true,
-			metadata: metadata,
-		});
+					const content = `${html}<style>${combinedCss}</style>`;
 
-		await browser.close();
-		await addPDFMeta(outputPath, metadata);
+					const yamlFile = await fs.readFile(path.join(cvDir, cvFile), "utf8");
+					const metadata = yaml.load(yamlFile);
 
-		const stats = await fs.stat(outputPath);
+					const browser = await puppeteer.launch();
+					const page = await browser.newPage();
 
-		console.log("PDF generated successfully 🎉");
-		console.log(`Final PDF file size: ${stats.size} bytes`);
+					await page.setContent(content, { waitUntil: "networkidle0" });
+					await page.pdf({
+							path: outputPath,
+							displayHeaderFooter: false,
+							printBackground: true,
+							preferCSSPageSize: true,
+							pdfA: true,
+							displayTitle: true,
+							outline: true,
+							annotating: true,
+							tagged: true,
+							generateTaggedPDF: true,
+							structureTreeRoot: true,
+							metadata: metadata,
+					});
+
+					await browser.close();
+					await addPDFMeta(outputPath, metadata);
+
+					const stats = await fs.stat(outputPath);
+
+					console.log(`PDF version ${version} generated successfully 🎉`);
+					console.log(`File saved as: ${pdfFileName}`);
+					console.log(`File size: ${stats.size} bytes`);
+			}
 	} catch (error) {
-		console.error("An error occurred:", error);
+			console.error("An error occurred:", error);
 	}
 }
 

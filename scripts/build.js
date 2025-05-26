@@ -7,6 +7,8 @@ const yaml = require("js-yaml");
 const srcDir = path.join(__dirname, "..", "src", "views");
 const outDir = path.join(__dirname, "..", "docs");
 const dataDir = path.join(__dirname, "..", "src", "data");
+const cvDir = path.join(dataDir, "cv");
+const siteDir = path.join(dataDir, "site.yaml");
 
 // Configure Nunjucks
 const env = nunjucks.configure(srcDir, { autoescape: true });
@@ -33,20 +35,50 @@ env.addFilter("urlize", function (text) {
 fs.ensureDirSync(outDir);
 
 // Read YAML data
-const cvData = yaml.load(
-	fs.readFileSync(path.join(dataDir, "cv.yaml"), "utf8")
-);
-const siteData = yaml.load(
-	fs.readFileSync(path.join(dataDir, "site.yaml"), "utf8")
-);
+function readYamlFiles() {
+	if (!fs.existsSync(cvDir)) {
+			console.error("CV directory not found:", cvDir);
+			return null;
+	}
+
+	try {
+			const files = fs.readdirSync(cvDir).filter(file => file.endsWith('.yaml'));
+
+			const siteData = yaml.load(fs.readFileSync(siteDir, "utf8"));
+
+			const cvVersions = {};
+			files.forEach(file => {
+					const filePath = path.join(cvDir, file);
+					const fileName = path.basename(file, '.yaml');
+					cvVersions[fileName] = yaml.load(fs.readFileSync(filePath, "utf8"));
+					console.log(`Loaded CV version: ${fileName}`);
+			});
+
+			return {
+					cvVersions,
+					siteData
+			};
+	} catch (error) {
+			console.error("Error reading YAML files:", error);
+			return null;
+	}
+}
+
+const yamlData = readYamlFiles();
+if (!yamlData) {
+	process.exit(1);
+}
 
 // Combine data
-const data = {
-	cv: cvData,
-	site: siteData,
-};
+const allVersionsData = Object.entries(yamlData.cvVersions).map(([version, cvData]) => ({
+	version,
+	data: {
+			cv: cvData,
+			site: yamlData.siteData
+	}
+}));
 
-// Minification options
+// Compile and minify a template
 const minifyOptions = {
 	collapseWhitespace: true,
 	removeComments: true,
@@ -58,12 +90,8 @@ const minifyOptions = {
 	minifyCSS: true,
 };
 
-// Compile and minify a template
-async function compileAndMinifyTemplate(templatePath, outputPath) {
-	const renderedHtml = nunjucks.render(path.basename(templatePath), {
-		cv: cvData,
-		site: siteData,
-	});
+async function compileAndMinifyTemplate(templatePath, outputPath, data) {
+	const renderedHtml = nunjucks.render(path.basename(templatePath), data);
 	const minifiedHtml = await minify(renderedHtml, minifyOptions);
 	fs.writeFileSync(outputPath, minifiedHtml);
 	console.log(`Compiled and minified: ${outputPath}`);
@@ -71,10 +99,12 @@ async function compileAndMinifyTemplate(templatePath, outputPath) {
 
 // Compile and minify index.njk
 (async () => {
-	await compileAndMinifyTemplate(
-		path.join(srcDir, "index.njk"),
-		path.join(outDir, "index.html"),
-		data
-	);
-	// Add more templates if you need
+	for (const { version, data } of allVersionsData) {
+			const outputFile = `index-${version}.html`;
+			await compileAndMinifyTemplate(
+					path.join(srcDir, "index.njk"),
+					path.join(outDir, outputFile),
+					data
+			);
+	}
 })();
