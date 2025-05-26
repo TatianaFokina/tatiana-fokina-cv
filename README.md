@@ -54,6 +54,14 @@ Document accessibility issues:
 
 For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screen readers.
 
+## File versioning
+
+Each CV should be tailored to the specific company and job title. Therefore, I have decided to generate a new HTML file and PDF version of my CV for different job descriptions. The file naming convention includes my surname, the keyword "CV," the year the CV was created, and the version number.
+
+The initial and basic version of the CV is named: `FokinaCV__2025V1.0`.
+
+If there is a major change, such as applying for a new job title, the first digit of the version number should increase by one (e.g., V2.0, V3.0, etc.). Other updates are considered minor changes and are indicated by incrementing the second digit (e.g., V1.1, V1.2, V2.1, etc.).
+
 ## Licenses
 
 Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
