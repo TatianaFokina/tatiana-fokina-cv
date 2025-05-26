@@ -127,10 +127,6 @@
 		color: var(--text-color-light);
 	}
 
-	.cv__company--print {
-		padding-top: 0;
-	}
-
 	.cv__metadata-item {
 		padding-bottom: 0;
 		color: var(--text-color-light);
