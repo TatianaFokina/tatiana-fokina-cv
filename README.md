@@ -56,7 +56,7 @@ For evaluating the accessibility of PDF files I recommended using [PAC (PDF Acce
 
 ## File versioning
 
-Each CV should be tailored to the specific company and job title. Therefore, I have decided to generate a new HTML file and PDF version of my CV for different job descriptions. The file naming convention includes my surname, the keyword "CV," the year the CV was created, and the version number.
+Each CV should be tailored to the specific company and job title. Therefore, I have decided to generate a new HTML file and PDF version of my CV for different job descriptions. The file naming convention includes my surname, the keyword ″CV,″ the year the CV was created, and the version number.
 
 The initial and basic version of the CV is named: `FokinaCV__2025V1.0`.
 
