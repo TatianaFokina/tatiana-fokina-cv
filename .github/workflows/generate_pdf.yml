@@ -3,10 +3,10 @@ name: Generate PDF
 on:
   push:
     paths:
-      - "docs/index.html"
+      - "docs/index-*.html"
       - "docs/styles/styles.css"
       - "docs/styles/print-styles.css"
-      - "src/data/cv.yaml"
+      - "src/data/cv/*.yaml"
       - "src/data/site.yaml"
       - "src/views/**"
 
@@ -52,6 +52,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add docs/tatiana-fokina-cv.pdf
-          git commit -m "Update PDF" || exit 0
+          git add docs/pdf/FokinaCV_*.pdf
+          git commit -m "Update PDF version" || exit 0
           git push
