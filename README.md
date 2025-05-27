@@ -64,4 +64,4 @@ If there is a major change, such as applying for a new job title, the first digi
 
 ## Licenses
 
-Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
+Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, PT Sans, is licensed under [SIL Open Font License](https://openfontlicense.org/ofl-faq/).
