@@ -1,15 +1,18 @@
 :root {
 	/* Theme colors */
+
 	--color-base: hsl(41 82% 87%);
 	--color-accent-primary: hsl(338 98% 80%);
 	--color-accent-secondary: hsl(201 100% 49%);
 
 	/* Text colors */
+
 	--color-text-primary: hsl(161 2% 12%);
 	--color-text-secondary: hsl(161 2% 17%);
 	--color-text-tertiary: hsl(161 2% 26%);
 
 	/* UI elements */
+
 	--color-border: hsla(0, 0%, 16%, 0.073);
 	--gradient-background: linear-gradient(
 			90deg, var(--color-accent-primary) 0%,
@@ -17,6 +20,7 @@
 	);
 
 	/* Typography system */
+
 	--font-family-base: "PT Sans", "Roboto", Arial, sans-serif;
 	--font-weight-regular: 400;
 	--font-weight-medium: 500;
@@ -24,6 +28,7 @@
 	--font-weight-bold: 700;
 
 	/* Typography scale */
+
 	--font-size-xs: clamp(0.8125rem, 0.6345rem + 0.6329vw, 1.125rem);
 	--font-size-sm: clamp(1rem, 0.7864rem + 0.7595vw, 1.375rem);
 	--font-size-md: clamp(1.5625rem, 1.2421rem + 1.1392vw, 2.125rem);
@@ -32,28 +37,31 @@
 	--font-size-2xl: clamp(3.8125rem, 2.9937rem + 2.9114vw, 5.25rem);
 
 	/* Line heights */
+
 	--leading-sm: clamp(16px, 11.443px + 1.0127vw, 24px);
 	--leading-base: clamp(24px, 19.443px + 1.0127vw, 32px);
-	--leading-lg: clamp(40px, 35.443px + 1.0127vw, 48px);
-	--leading-xl: clamp(48px, 38.8861px + 2.0253vw, 64px);
-	--leading-2xl: clamp(96px, 75.4937px + 4.557vw, 132px);
+	--leading-lg: clamp(38px, 35.443px + 1.0127vw, 46px);
+	--leading-xl: clamp(46px, 38.8861px + 2.0253vw, 62px);
+	--leading-2xl: clamp(66px, 39.7975px + 5.8228vw, 112px);
 
 	/* Spacing */
-	--space-2xs: clamp(4px, 1.7215px + 0.5063vw, 8px);
-	--space-xs: clamp(2px, 0.8608px + 0.2532vw, 4px);
+
+	--space-2xs: clamp(2px, 0.8608px + 0.2532vw, 4px);
+	--space-xs: clamp(4px, 1.7215px + 0.5063vw, 8px);
 	--space-sm: clamp(8px, 4.5823px + 0.7595vw, 14px);
-	--space-base: clamp(4px, 1.7215px + 0.5063vw, 8px);
 	--space-md: clamp(22px, 9.4684px + 2.7848vw, 44px);
 	--space-lg: clamp(15px, 4.1772px + 2.4051vw, 34px);
 	--space-xl: clamp(27px, 11.6203px + 3.4177vw, 54px);
 
 	/* Common patterns */
+
 	--border-link: 3px solid var(--color-accent-primary);
 	--border-radius-sm: 4px;
 	--border-radius-lg: 15px;
 }
 
 /* Reset */
+
 *,
 *::before,
 *::after {
@@ -62,11 +70,12 @@
     box-sizing: border-box;
 }
 
-/* Base Styles */
+/* Base styles */
+
 body {
 	display: grid;
 	min-height: 100vh;
-	margin: 30px;
+	margin: 1.6em;
 	font-family: var(--font-family-base);
 	font-size: var(--font-size-sm);
 	font-weight: var(--font-weight-regular);
@@ -78,8 +87,7 @@ body {
 	max-width: 890px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 2.5rem 2.1875rem;
-	border-radius: 10px;
+	padding: 0 1.555em;
 }
 
 /* Print styles reset */
@@ -102,8 +110,7 @@ body {
 
 .cv-header__name {
 	margin-top: 0;
-	padding-top: var(--space-base);
-	margin-bottom: var(--space-base);
+	margin-bottom: var(--space-sm);
 	font-size: var(--font-size-2xl);
 	font-weight: var(--font-weight-bold);
 	line-height: var(--leading-2xl);
@@ -120,6 +127,7 @@ body {
 	display: inline-flex;
 	align-items: center;
 	padding: 0.5em 1em;
+	margin-bottom: var(--space-xl);
 	gap: .5625em;
 	border: var(--border-link);
 	border-radius: var(--border-radius-lg);
@@ -143,7 +151,6 @@ body {
 	margin-top: 1.2em;
 	margin-bottom: 2em;
 	background: var(--gradient-background);
-	border: 1px solid var(--gradient-background);
 	border-radius: var(--border-radius-sm);
 }
 
@@ -173,7 +180,7 @@ body {
 
 	padding-top: var(--space-xl);
 	padding-bottom: var(--border-width);
-	margin-bottom: var(--space-base);
+	margin-bottom: var(--space-xs);
 	font-size: var(--font-size-xl);
 	font-weight: var(--font-weight-semibold);
 	line-height: var(--leading-xl);
@@ -182,16 +189,16 @@ body {
 }
 
 .cv__text {
-	padding-top: var(--space-base);
-	margin-bottom: var(--space-base);
+	padding-top: var(--space-xs);
+	margin-bottom: var(--space-xs);
 	line-height: var(--leading-base);
 }
 
 .cv__metadata-item,
 .cv__position {
 	display: inline-flex;
-	padding-top: var(--space-xs);
-	margin-bottom: var(--space-2xs);
+	padding-top: var(--space-2xs);
+	margin-bottom: var(--space-xs);
 	font-size: var(--font-size-xs);
 	line-height: var(--leading-sm);
 	color: var(--color-text-tertiary);
@@ -211,8 +218,8 @@ body {
 }
 
 .cv__achievements {
-	padding-top: var(--space-base);
-	margin-bottom: var(--space-base);
+	padding-top: var(--space-xs);
+	margin-bottom: var(--space-xs);
 	margin-left: 1.8em;
 	line-height: var(--leading-base);
 }
