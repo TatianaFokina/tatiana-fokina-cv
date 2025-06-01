@@ -53,13 +53,15 @@
 			<h2 class="cv__heading" id="skills">
 				{{ cv.skills.title }}
 			</h2>
-			{% for subgroup in ["skillset 1", "skillset 2", "skillset 3", "skillset 4", "skillset 5"] %}
-				{% if cv.skills[subgroup] %}
-					<p class="cv__text">
-						<b>{{ cv.skills[subgroup].name }}</b> {{ cv.skills[subgroup].set }}
-					</p>
-				{% endif %}
-			{% endfor %}
+			<div class="cv__flow-u">
+				{% for subgroup in ["skillset 1", "skillset 2", "skillset 3", "skillset 4", "skillset 5"] %}
+					{% if cv.skills[subgroup] %}
+						<p class="cv__text">
+							<b>{{ cv.skills[subgroup].name }}</b> {{ cv.skills[subgroup].set }}
+						</p>
+					{% endif %}
+				{% endfor %}
+			</div>
 		</section>
 
 		<hr class="cv__divider">
@@ -94,13 +96,15 @@
 			<h2 class="cv__heading" id="other">
 				{{ cv.other.title }}
 			</h2>
-			{% for section in cv.other.sections %}
-				<p class="cv__text">
-					<b>{{ section.name }}</b>
-					{% set content = section.content | replace("\n", " ") %}
-					{{ content | urlize | safe }}
-				</p>
-			{% endfor %}
+			<div class="cv__flow-u">
+				{% for section in cv.other.sections %}
+					<p class="cv__text">
+						<b>{{ section.name }}</b>
+						{% set content = section.content | replace("\n", " ") %}
+						{{ content | urlize | safe }}
+					</p>
+				{% endfor %}
+			</div>
 		</section>
 	</div>
 {% endblock %}
