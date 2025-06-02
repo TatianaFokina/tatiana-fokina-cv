@@ -78,8 +78,8 @@ async function generatePDF() {
 							path.join(outDir, "styles", "print-styles.css"),
 					];
 
-					// Create version-specific PDF filename (e.g., Fokina-T-CV_2025v1.0.pdf)
-					const pdfFileName = `Fokina-T-CV_${version}.pdf`;
+					// Create version-specific PDF filename (e.g., fokina-a11y-engineer-v1.0.pdf)
+					const pdfFileName = `fokina-${version}.pdf`;
 					const outputPath = path.join(outDir, "pdf", pdfFileName);
 
 					console.log(`Generating PDF for version ${version} ⏳`);
