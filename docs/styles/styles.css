@@ -55,7 +55,8 @@
 
 	/* Common patterns */
 
-	--border-link: 3px solid var(--color-accent-primary);
+	--border-link: 3px solid var(--color-accent-secondary);
+	--active-link: 3px solid var(--color-accent-primary);
 	--border-radius-sm: 4px;
 	--border-radius-lg: 15px;
 }
@@ -65,9 +66,9 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /* Base styles */
@@ -146,20 +147,26 @@ body {
 .cv-header__contacts {
 	display: flex;
 	flex-direction: column;
-	gap: 0.8em;
 	padding: 1.2em 1em;
-	margin-top: 1.2em;
-	margin-bottom: 2em;
+	margin: var(--space-md) 0;
+	gap: 1.135em;
 	background: var(--gradient-background);
 	border-radius: var(--border-radius-sm);
 }
 
 .contacts__list {
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: start;
-	gap: 0.8em;
+	gap: 1.135em;
 	list-style-type: none;
+}
+
+@media (width >= 610px) {
+	.contacts__list {
+		flex-direction: row;
+	}
 }
 
 .contacts__item {
@@ -236,19 +243,19 @@ body {
 
 .cv-header__pdf-link:hover {
 	background-color: var(--color-accent-primary);
-	border: 3px solid var(--color-accent-secondary);
+	border: var(--active-link);
 }
 
 .contacts__link:hover,
 .cv__link:hover {
 	background-color: var(--color-accent-primary);
-	border-bottom: 3px solid var(--color-accent-secondary);
+	border-bottom: var(--active-link);
 }
 
 .cv-header__pdf-link:focus-visible,
 .contacts__link:focus-visible,
 .cv__link:focus-visible {
-	outline: 3px solid var(--color-accent-secondary);
+	outline: var(--border-link);
 }
 
 /* Animation */
