@@ -52,6 +52,6 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add docs/pdf/FokinaCV_*.pdf
+          git add docs/pdf/*.pdf
           git commit -m "Update PDF version" || exit 0
           git push
