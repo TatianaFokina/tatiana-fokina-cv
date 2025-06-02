@@ -147,8 +147,8 @@ body {
 .cv-header__contacts {
 	display: flex;
 	flex-direction: column;
-	padding: 1.2em 1em;
 	margin: var(--space-md) 0;
+	padding: 1.2em 1em;
 	gap: 1.135em;
 	background: var(--gradient-background);
 	border-radius: var(--border-radius-sm);
