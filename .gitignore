@@ -8,3 +8,4 @@
 !cv.yaml
 !site.yaml
 /venv
+*.pdf
