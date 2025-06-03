@@ -6,6 +6,7 @@ settings:
 
 overrides:
   tar-fs: '>=3.0.9'
+  puppeteer-core: 23.5.1
 
 importers:
 

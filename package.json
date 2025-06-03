@@ -10,7 +10,8 @@
     "generate-pdf": "node scripts/generate-pdf.js"
   },
   "resolutions": {
-    "tar-fs": ">=3.0.9"
+    "tar-fs": ">=3.0.9",
+    "puppeteer-core": "23.5.1"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
