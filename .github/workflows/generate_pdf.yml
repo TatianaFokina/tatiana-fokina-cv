@@ -18,8 +18,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Create PDF directory
-        run: mkdir -p docs/pdf
+      - name: Create and track PDF directory
+        run: |
+          mkdir -p docs/pdf
+          touch docs/pdf/.gitkeep
+          git add docs/pdf/.gitkeep
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git commit -m "Ensure PDF directory exists" || echo "PDF directory already tracked"
 
       - name: Setup Chrome with AppArmor profile
         run: |
@@ -73,6 +79,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git add docs/pdf/
+          git add -f docs/pdf/
+          git status
           git commit -m "Update PDF versions" || echo "No changes to commit"
           git push
