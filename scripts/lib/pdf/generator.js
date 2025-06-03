@@ -54,10 +54,10 @@ async function generatePDF(htmlPath, outputPath, metadata) {
 				'--no-sandbox',
 				'--disable-setuid-sandbox',
 				'--disable-dev-shm-usage',
-				'--disable-accelerated-2d-canvas',
-				'--disable-gpu',
-				'--disable-web-security'
-		]
+				'--single-process',
+				'--no-zygote'
+		],
+		executablePath: process.env.CHROME_BIN || null
 	});
 
 	try {
