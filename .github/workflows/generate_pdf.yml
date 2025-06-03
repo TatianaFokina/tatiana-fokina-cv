@@ -60,10 +60,10 @@ jobs:
 
       - name: Generate PDF
         run: pnpm run generate-pdf
-         env:
-           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
-           CHROME_DEVEL_SANDBOX: /tmp/chrome-sandbox
-           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+        env:
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+          CHROME_DEVEL_SANDBOX: /tmp/chrome-sandbox
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
 
       - name: Commit changes
         if: success()
