@@ -47,7 +47,18 @@ async function getCombinedStyles() {
 	* @param {Object} metadata — PDF metadata
 */
 async function generatePDF(htmlPath, outputPath, metadata) {
-	const browser = await puppeteer.launch();
+	// const browser = await puppeteer.launch();
+	const browser = await puppeteer.launch({
+		headless: "new",
+		args: [
+				'--no-sandbox',
+				'--disable-setuid-sandbox',
+				'--disable-dev-shm-usage',
+				'--disable-accelerated-2d-canvas',
+				'--disable-gpu',
+				'--disable-web-security'
+		]
+	});
 
 	try {
 		// Read HTML and CSS
