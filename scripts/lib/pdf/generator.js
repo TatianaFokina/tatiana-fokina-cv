@@ -1,4 +1,4 @@
-const PATHS = require("../config/paths");
+const { PATHS } = require("../config/paths");
 const fs = require("fs-extra");
 const puppeteer = require("puppeteer");
 const { addMetadata } = require("./pdf-metadata");

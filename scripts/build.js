@@ -1,4 +1,5 @@
-const PATHS = require("./lib/config/paths");
+const path = require("path");
+const { PATHS, createVersionAlias } = require("./lib/config/paths");
 const fs = require("fs-extra");
 const { readYamlFiles, ensureDirectory } = require("./lib/utils/file-system");
 const { configureNunjucks, renderTemplate } = require("./lib/build/templating");
@@ -12,7 +13,9 @@ const { minifyHtml } = require("./lib/build/compiler");
 
 async function buildVersion(version, data) {
 	try {
-		const outputFile = PATHS.out.patterns.html(version);
+		// Use createVersionAlias to generate the filename
+		const alias = createVersionAlias(version);
+		const outputFile = path.join(PATHS.out.html, `${alias}.html`);
 
 		// Render and minify
 		const html = renderTemplate(PATHS.src.template, data);
@@ -20,39 +23,44 @@ async function buildVersion(version, data) {
 
 		// Save output
 		await fs.writeFile(outputFile, minified);
-		console.log(`✅ Save built version: ${version}`);
+		console.log(`✅ Save built version: ${version} as ${alias}.html`);
 	} catch (error) {
 		console.error(`❌ Failed to save build version: ${version}`, error);
 		throw error;
 	}
 }
 
-// Main build process
 async function build() {
 	try {
-		// Initialize
-		ensureDirectory(PATHS.out.root);
+		// Create required directories
+		await Promise.all([
+			ensureDirectory(PATHS.out.root),
+			ensureDirectory(PATHS.out.html),
+			ensureDirectory(PATHS.out.pdf)
+		]);
+
 		configureNunjucks(PATHS.src.views);
 
-		// Load data
+		// Load CV and site data
 		const { cvVersions, siteData } = await readYamlFiles(
-			PATHS.cvDir,
-			PATHS.siteConfig
+			PATHS.src.cv,
+			PATHS.src.site
 		);
 
-		// Process each version
-		const builds = Object.entries(cvVersions).map(([version, cvData]) =>
-			buildVersion(version, {
-				cv: cvData,
-				site: siteData
-			})
+		// Build all versions
+		await Promise.all(
+			Object.entries(cvVersions).map(([version, cvData]) =>
+				buildVersion(version, {
+					cv: cvData,
+					site: siteData
+				})
+			)
 		);
 
-		// Wait for all versions to build
-		await Promise.all(builds);
 		console.log("🎉 Build completed successfully");
 	} catch (error) {
-		console.error("❌ Build failed", error);
+		console.error("❌ Build failed:", error);
+		console.error("PATHS object:", PATHS);
 		process.exit(1);
 	}
 }

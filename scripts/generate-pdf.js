@@ -1,4 +1,4 @@
-const PATHS = require("./lib/config/paths");
+const { PATHS } = require("./lib/config/paths");
 const { readYamlFiles, ensureDirectory, updatePdfUrl } = require("./lib/utils/file-system");
 const { generatePDF } = require("./lib/pdf/generator");
 
@@ -7,7 +7,12 @@ async function generatePDFs() {
 	try {
 		// Setup
 		ensureDirectory(PATHS.out.pdf);
-		const { cvVersions } = await readYamlFiles();
+
+		// Pass required paths to readYamlFiles
+		const { cvVersions } = await readYamlFiles(
+			PATHS.src.cv,
+			PATHS.src.site
+		);
 
 		// Generate PDFs and update URLs
 		for (const [version, cvData] of Object.entries(cvVersions)) {
@@ -15,9 +20,9 @@ async function generatePDFs() {
 				PATHS.out.patterns.html(version),
 				PATHS.out.patterns.pdf(version),
 				{
-					title: `${cvData.name} — CV`,
-					creator: cvData.name,
-					description: cvData.summary
+					title: `${cvData.personal["candidate name"]} — CV`,
+					creator: cvData.personal["candidate name"],
+					description: cvData.summary.paragraphs[0]
 				}
 			);
 

@@ -1,5 +1,5 @@
 const path = require("path");
-const PATHS = require("../config/paths");
+const { PATHS } = require("../config/paths");
 const fs = require("fs-extra");
 const yaml = require("js-yaml");
 
