@@ -49,16 +49,15 @@ async function getCombinedStyles() {
 async function generatePDF(htmlPath, outputPath, metadata) {
 	// const browser = await puppeteer.launch();
 	const browser = await puppeteer.launch({
-		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
 		headless: true,
-		args: [
+		args: process.env.CI ? [
 			'--disable-dev-shm-usage',
 			'--disable-gpu',
 			'--disable-web-security',
 			'--disable-features=VizDisplayCompositor',
-			// Only add --no-sandbox as absolute fallback
 			...(process.env.CI && !process.env.CHROME_DEVEL_SANDBOX ? ['--no-sandbox'] : [])
-		]
+			] : []
 	});
 
 	try {
