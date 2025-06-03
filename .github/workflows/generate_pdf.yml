@@ -18,6 +18,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Create PDF directory
+        run: mkdir -p docs/pdf
+
       - name: Setup Chrome with AppArmor profile
         run: |
           sudo apt-get update
