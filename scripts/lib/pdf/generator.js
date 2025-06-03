@@ -57,7 +57,7 @@ async function generatePDF(htmlPath, outputPath, metadata) {
 			'--disable-web-security',
 			'--disable-features=VizDisplayCompositor',
 			...(process.env.CI && !process.env.CHROME_DEVEL_SANDBOX ? ['--no-sandbox'] : [])
-			] : []
+		] : []
 	});
 
 	try {
