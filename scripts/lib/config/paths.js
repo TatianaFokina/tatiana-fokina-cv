@@ -1,6 +1,7 @@
 const path = require("path");
 
 const ROOT_DIR = path.join(__dirname, "..", "..", "..");
+const BASE_URL = "https://tatianafokina.github.io/tatiana-fokina-cv";
 
 const PATHS = {
 	// Source paths
@@ -24,7 +25,8 @@ const PATHS = {
 		},
 		patterns: {
 			html: (version) => path.join(ROOT_DIR, "docs", `index-${version}.html`),
-			pdf: (version) => path.join(ROOT_DIR, "docs", "pdf", `fokina-${version}.pdf`)
+			pdf: (version) => path.join(ROOT_DIR, "docs", "pdf", `fokina-${version}.pdf`),
+			pdfUrl: version => `${BASE_URL}/pdf/fokina-${version}.pdf`
 		}
 	},
 };

@@ -104,9 +104,37 @@ async function readHTML(htmlPath) {
 	}
 }
 
+// Update PDF URL in CV YAML file
+/**
+	* @param { string } version — CV version identifier
+	* @param { Object } cvData — CV data object
+*/
+async function updatePdfUrl(version, cvData) {
+	try {
+		const cvPath = path.join(PATHS.src.cv, `${version}.yaml`);
+
+		// Update PDF URL in data
+		cvData.personal.pdf.url = PATHS.out.patterns.pdfUrl(version);
+
+		// Write updated YAML
+		const updatedYaml = yaml.dump(cvData, {
+			indent: 2,
+			lineWidth: -1,
+			quotingType: '"'
+		});
+
+		await fs.writeFile(cvPath, `---\n${updatedYaml}`);
+		console.log(`✅ Updated PDF URL in ${version}.yaml`);
+	} catch (error) {
+		console.error(`✅ Failed to update PDF URL in ${version}.yaml:`, error);
+		throw error;
+	}
+}
+
 module.exports = {
 	readYamlFiles,
 	readCSSFiles,
 	ensureDirectory,
-	readHTML
+	readHTML,
+	updatePdfUrl
 };

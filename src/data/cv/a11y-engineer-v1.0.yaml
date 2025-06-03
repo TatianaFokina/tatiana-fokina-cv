@@ -18,17 +18,12 @@ personal:
   pdf:
     label: PDF version
     url: https://tatianafokina.github.io/tatiana-fokina-cv/pdf/fokina-a11y-engineer-v1.0.pdf
-
 summary:
   title: Summary
   paragraphs:
-    - CPACC-certified Accessibility Engineer with 5+ years of Web/Frontend Development,
-      specializing in developing user-centred interfaces.
-    - Demonstrated proficiency in web technologies, including HTML, CSS, and JavaScript.
-      Mastery of WAI-ARIA, WCAG, and ATAG standards and guidelines. Experienced with assistive technologies
-      and testing tools.
+    - CPACC-certified Accessibility Engineer with 5+ years of Web/Frontend Development, specializing in developing user-centred interfaces.
+    - Demonstrated proficiency in web technologies, including HTML, CSS, and JavaScript. Mastery of WAI-ARIA, WCAG, and ATAG standards and guidelines. Experienced with assistive technologies and testing tools.
     - Leadership in accessibility advocacy through public writing, speaking engagements and community initiatives.
-
 experience:
   title: Work experience
   last:
@@ -37,13 +32,10 @@ experience:
     time period: August 2022 – Present
     location: remote
     achievements:
-      - Architected a content plan, directed and launched the Accessibility section
-        within a 3-month timeframe.
-      - Collaborated with 70+ contributors to develop 20+ articles on accessibility,
-        20+ materials on HTML and CSS, and 50+ on other web technologies.
+      - Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.
+      - Collaborated with 70+ contributors to develop 20+ articles on accessibility, 20+ materials on HTML and CSS, and 50+ on other web technologies.
       - Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.
-      - Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's
-        website.
+      - Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.
   previous:
     company: JUG Ru Group
     job title: Frontend developer.
@@ -51,10 +43,8 @@ experience:
     location: St. Petersburg, Russia
     achievements:
       - Led accessibility audits on 10+ conference sites, improving Lighthouse accessibility scores by 48%.
-      - Maintained and modernized 10+ legacy projects, enchasing performance by 15% and ensured functionality
-        for 5,000+ users
-      - Engineered 4 features for user accounts on the ticket platform in collaboration with designers,
-        frontend, and backend developers, enhanced user experience and functionality.
+      - Maintained and modernized 10+ legacy projects, enchasing performance by 15% and ensured functionality for 5,000+ users
+      - Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhanced user experience and functionality.
       - Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.
   initial:
     company: Self-employment
@@ -62,11 +52,9 @@ experience:
     time period: December 2016 – May 2019
     location: St. Petersburg, Russia
     achievements:
-      - Conceptualized and implemented 7 landing pages and 3 multi-page sites for
-        clients, strengthening their online presence.
+      - Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients, strengthening their online presence.
       - Developed 3 templates for MODX and Drupal, simplifying client content management processes.
       - Remediated 5 websites to comply with government accessibility standards, reducing legal risks.
-
 skills:
   title: Skills
   skillset 1:
@@ -84,14 +72,12 @@ skills:
   skillset 5:
     name: Tools and platforms.
     set: Git, GitHub, GitLab, axe DevTools, Wave Evaluation Tool (WAVE), Accessibility Insights, Pa11y, accessibility bookmarklets, Storybook, 11ty, Gulp, Figma.
-
 education:
   title: Education
   place: St. Petersburg State Institute of Culture
   degree: Specialist's degree in Integrated Library Systems (ILS).
   year: June 2015
   location: St. Petersburg, Russia
-
 other:
   title: Other
   sections:
