@@ -24,7 +24,7 @@ const PATHS = {
 		},
 		patterns: {
 			html: (version) => path.join(ROOT_DIR, "docs", `index-${version}.html`),
-			pdf: (version) => path.join(ROOT_DIR, "docs", "pdf", `FokinaCV_${version}.pdf`)
+			pdf: (version) => path.join(ROOT_DIR, "docs", "pdf", `fokina-${version}.pdf`)
 		}
 	},
 };
