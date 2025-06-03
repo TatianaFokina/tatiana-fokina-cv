@@ -24,8 +24,8 @@ const PATHS = {
 			print: path.join(ROOT_DIR, "docs", "styles", "print-styles.css")
 		},
 		patterns: {
-			html: (version) => path.join(ROOT_DIR, "docs", `index-${version}.html`),
-			pdf: (version) => path.join(ROOT_DIR, "docs", "pdf", `fokina-${version}.pdf`),
+			html: (version) => path.join(PATHS.out.root, `index-${version}.html`),
+			pdf: (version) => path.join(PATHS.out.pdf, `fokina-${version}.pdf`),
 			pdfUrl: version => `${BASE_URL}/pdf/fokina-${version}.pdf`
 		}
 	},
