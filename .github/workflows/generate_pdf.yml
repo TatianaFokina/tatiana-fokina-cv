@@ -45,14 +45,24 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Install Chrome and setup sandbox
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          CHROME_PATH=$(which google-chrome-stable)
+          CHROME_DIR=$(dirname "$CHROME_PATH")
+          sudo cp "$CHROME_DIR/chrome-sandbox" /tmp/chrome-sandbox || true
+          sudo chown root:root /tmp/chrome-sandbox || true
+          sudo chmod 4755 /tmp/chrome-sandbox || true
+
       - name: Build HTML
         run: pnpm run build
 
       - name: Generate PDF
-        run: |
-          aa-exec -p unconfined -- pnpm run generate-pdf
+          run: pnpm run generate-pdf
           env:
             PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
+            CHROME_DEVEL_SANDBOX: /tmp/chrome-sandbox
             PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
 
       - name: Commit changes
