@@ -1,110 +1,65 @@
+const PATHS = require("./lib/config/paths");
 const fs = require("fs-extra");
-const path = require("path");
-const nunjucks = require("nunjucks");
-const { minify } = require("html-minifier-terser");
-const yaml = require("js-yaml");
+const { readYamlFiles, ensureDirectory } = require("./lib/utils/file-system");
+const { configureNunjucks, renderTemplate } = require("./lib/build/templating");
+const { minifyHtml } = require("./lib/build/compiler");
 
-const srcDir = path.join(__dirname, "..", "src", "views");
-const outDir = path.join(__dirname, "..", "docs");
-const dataDir = path.join(__dirname, "..", "src", "data");
-const cvDir = path.join(dataDir, "cv");
-const siteDir = path.join(dataDir, "site.yaml");
+// Process single CV version
+/**
+	* @param { string } version — CV version identifier
+	* @param { Object } data — Template data
+*/
 
-// Configure Nunjucks
-const env = nunjucks.configure(srcDir, { autoescape: true });
-
-// Convert URLs in text to HTML links
-env.addFilter("urlize", function (text) {
-	if (!text || typeof text !== "string") {
-		return "";
-	}
-
-	return text.replace(
-		/\[([^\]]+)\]\(([^)]+)\)(?:{([^}]+)})?/g,
-		function (match, text, url, classes) {
-			const existingClasses = classes ? classes.trim() : "";
-			const allClasses = existingClasses
-				? `cv__link ${existingClasses}`
-				: "cv__link";
-			return `<a href="${url}" class="${allClasses}">${text}</a>`;
-		}
-	);
-});
-
-// Ensure the output directory exists
-fs.ensureDirSync(outDir);
-
-// Read YAML data
-function readYamlFiles() {
-	if (!fs.existsSync(cvDir)) {
-			console.error("CV directory not found:", cvDir);
-			return null;
-	}
-
+async function buildVersion(version, data) {
 	try {
-			const files = fs.readdirSync(cvDir).filter(file => file.endsWith('.yaml'));
+		const outputFile = PATHS.out.patterns.html(version);
 
-			const siteData = yaml.load(fs.readFileSync(siteDir, "utf8"));
+		// Render and minify
+		const html = renderTemplate(PATHS.src.template, data);
+		const minified = await minifyHtml(html);
 
-			const cvVersions = {};
-			files.forEach(file => {
-					const filePath = path.join(cvDir, file);
-					const fileName = path.basename(file, '.yaml');
-					cvVersions[fileName] = yaml.load(fs.readFileSync(filePath, "utf8"));
-					console.log(`Loaded CV version: ${fileName}`);
-			});
-
-			return {
-					cvVersions,
-					siteData
-			};
+		// Save output
+		await fs.writeFile(outputFile, minified);
+		console.log(`✅ Save built version: ${version}`);
 	} catch (error) {
-			console.error("Error reading YAML files:", error);
-			return null;
+		console.error(`❌ Failed to save build version: ${version}`, error);
+		throw error;
 	}
 }
 
-const yamlData = readYamlFiles();
-if (!yamlData) {
-	process.exit(1);
+// Main build process
+async function build() {
+	try {
+		// Initialize
+		ensureDirectory(PATHS.out.root);
+		configureNunjucks(PATHS.src.views);
+
+		// Load data
+		const { cvVersions, siteData } = await readYamlFiles(
+			PATHS.cvDir,
+			PATHS.siteConfig
+		);
+
+		// Process each version
+		const builds = Object.entries(cvVersions).map(([version, cvData]) =>
+			buildVersion(version, {
+				cv: cvData,
+				site: siteData
+			})
+		);
+
+		// Wait for all versions to build
+		await Promise.all(builds);
+		console.log("🎉 Build completed successfully");
+	} catch (error) {
+		console.error("❌ Build failed", error);
+		process.exit(1);
+	}
 }
 
-// Combine data
-const allVersionsData = Object.entries(yamlData.cvVersions).map(([version, cvData]) => ({
-	version,
-	data: {
-			cv: cvData,
-			site: yamlData.siteData
-	}
-}));
-
-// Compile and minify a template
-const minifyOptions = {
-	collapseWhitespace: true,
-	removeComments: true,
-	removeOptionalTags: true,
-	removeRedundantAttributes: true,
-	removeScriptTypeAttributes: true,
-	removeTagWhitespace: true,
-	useShortDoctype: true,
-	minifyCSS: true,
-};
-
-async function compileAndMinifyTemplate(templatePath, outputPath, data) {
-	const renderedHtml = nunjucks.render(path.basename(templatePath), data);
-	const minifiedHtml = await minify(renderedHtml, minifyOptions);
-	fs.writeFileSync(outputPath, minifiedHtml);
-	console.log(`Compiled and minified: ${outputPath}`);
+// Run build if called directly
+if (require.main === module) {
+	build();
 }
 
-// Compile and minify index.njk
-(async () => {
-	for (const { version, data } of allVersionsData) {
-			const outputFile = `index-${version}.html`;
-			await compileAndMinifyTemplate(
-					path.join(srcDir, "index.njk"),
-					path.join(outDir, outputFile),
-					data
-			);
-	}
-})();
+module.exports = build;
