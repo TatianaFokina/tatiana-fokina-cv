@@ -1,19 +1,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <title>{{ cv.meta.title }}</title>
 <meta name="description" content="{{ cv.meta.description }}">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 <link href="../styles/styles.css" rel="stylesheet">
 <link href="../styles/print-styles.css" rel="stylesheet" media="print">
+
 <link rel="icon" href="../assets/favicon.ico" sizes="32x32">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="manifest" href="../assets/manifest.webmanifest">
+
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.base.url }}/html/{{ version }}.html">
 <meta property="og:title" content="{{ cv.meta.title }}">
 <meta property="og:description" content="{{ cv.meta.description }}">
 <meta property="og:image" content="{{ site.base.url }}/assets/{{ cv.meta.image }}">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ site.base.url }}/html/{{ version }}.html">
+<meta name="twitter:title" content="{{ cv.meta.title }}">
+<meta name="twitter:description" content="{{ cv.meta.description }}">
+<meta name="twitter:site" content="{{ site.base.url }}">
+<meta name="twitter:image" content="{{ site.base.url }}/assets/{{ cv.meta.image }}">

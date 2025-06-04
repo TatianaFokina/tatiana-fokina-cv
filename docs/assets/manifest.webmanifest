@@ -12,8 +12,9 @@
 			"sizes": "512x512"
 		}
 	],
-	"start_url": "/",
+	"start_url": "/tatiana-fokina-cv/",
 	"scope": "/",
-	"background_color": "#hexCode",
+	"background_color": "#ffffff",
+  "theme_color": "#ffffff",
 	"display": "standalone"
 }
