@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ site.html.title }}</title>
-<meta name="description" content="{{ site.html.description }}">
+<title>{{ cv.meta.title }}</title>
+<meta name="description" content="{{ cv.meta.description }}">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,3 +12,8 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
 <link rel="manifest" href="../assets/manifest.webmanifest">
+<meta property="og:title" content="{{ cv.meta.title }}">
+<meta property="og:description" content="{{ cv.meta.description }}">
+<meta property="og:image" content="{{ BASE_URL }}/assets/{{ cv.meta.image }}">
+<meta property="og:url" content="{{ BASE_URL }}/html/{{ version }}.html">
+<meta property="og:type" content="profile">
