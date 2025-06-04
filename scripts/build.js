@@ -18,7 +18,12 @@ async function buildVersion(version, data) {
 		const outputFile = path.join(PATHS.out.html, `${alias}.html`);
 
 		// Render and minify
-		const html = renderTemplate(PATHS.src.template, data);
+		const html = renderTemplate(PATHS.src.template, {
+			...data,
+			version,
+			PATHS
+		});
+
 		const minified = await minifyHtml(html);
 
 		// Save output
