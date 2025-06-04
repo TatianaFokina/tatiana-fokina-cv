@@ -13,7 +13,7 @@
 		}
 	],
 	"start_url": "/tatiana-fokina-cv/",
-	"scope": "/",
+	"scope": "/assets/",
 	"background_color": "#ffffff",
   "theme_color": "#ffffff",
 	"display": "standalone"
