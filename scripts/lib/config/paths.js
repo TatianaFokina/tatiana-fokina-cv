@@ -1,7 +1,6 @@
 const path = require("path");
 
 const ROOT_DIR = path.join(__dirname, "..", "..", "..");
-const BASE_URL = "https://tatianafokina.github.io/tatiana-fokina-cv";
 
 // Generate short alias from full version name
 /**
@@ -45,7 +44,7 @@ const PATHS = {
 		patterns: {
 			html: (version) => path.join(PATHS.out.html, `${createVersionAlias(version)}.html`),
 			pdf: (version) => path.join(PATHS.out.pdf, `fokina-${version}.pdf`),
-			pdfUrl: version => `${BASE_URL}/pdf/fokina-${version}.pdf`
+			pdfUrl: (version, baseUrl) => `${baseUrl}/pdf/fokina-${version}.pdf`
 		}
 	},
 };

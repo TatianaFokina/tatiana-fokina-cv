@@ -1,4 +1,8 @@
 ---
+base:
+  url: https://tatianafokina.github.io/tatiana-fokina-cv
+html:
+  lang: en
 xmp:
   title: Tatiana Fokina CV
   author: Tatiana Fokina
@@ -6,6 +10,3 @@ xmp:
   keywords: CV, resume, Tatiana Fokina, accessibility engineer, accessibility professional
   creator: PDF Generator Script
   producer: Puppeteer
-
-html:
-  lang: en
