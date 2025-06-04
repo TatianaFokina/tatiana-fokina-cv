@@ -2,12 +2,12 @@
 	"name": "Tatiana Fokina CV",
 	"icons": [
 		{
-			"src": "/favicon-192x192.png",
+			"src": "/tatiana-fokina-cv/assets/favicon-192x192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/favicon-512x512.png",
+			"src": "/tatiana-fokina-cv/assets/favicon-512x512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
