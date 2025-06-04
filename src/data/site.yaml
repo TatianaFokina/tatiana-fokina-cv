@@ -5,8 +5,9 @@ html:
   lang: en
 xmp:
   title: Tatiana Fokina CV
-  author: Tatiana Fokina
-  subject: Accessibility engineer
+  description: Accessibility engineer
+  subject: PDF/UA-1
+  format: application/pdf
+  creator: Tatiana Fokina
+  producer: Puppeteer with PDF/UA support
   keywords: CV, resume, Tatiana Fokina, accessibility engineer, accessibility professional
-  creator: PDF Generator Script
-  producer: Puppeteer

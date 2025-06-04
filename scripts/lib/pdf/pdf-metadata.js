@@ -1,5 +1,7 @@
 const { PDFDocument, PDFName } = require("pdf-lib");
 const fs = require("fs-extra");
+const yaml = require("yaml");
+const path = require("path");
 
 // Generate XMP metadata XML string
 /**
@@ -7,34 +9,32 @@ const fs = require("fs-extra");
 	* @returns { string } — XMP metadata XML
 */
 
-function generateXMPMetadata(metadata) {
-	return `
-		<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
-			<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c006 80.159825, 2016/09/16-03:31:08">
-				<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-					<rdf:Description rdf:about=""
-						xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/"
-						xmlns:dc="http://purl.org/dc/elements/1.1/">
-						<pdfuaid:part>1</pdfuaid:part>
-						<dc:title>
-							<rdf:Alt>
-								<rdf:li xml:lang="x-default">${metadata.title}</rdf:li>
-							</rdf:Alt>
-						</dc:title>
-						<dc:creator>
-							<rdf:Seq>
-								<rdf:li>${metadata.creator}</rdf:li>
-							</rdf:Seq>
-						</dc:creator>
-							<dc:description>
-								<rdf:Alt>
-									<rdf:li xml:lang="x-default">${metadata.description}</rdf:li>
-								</rdf:Alt>
-							</dc:description>
-					</rdf:Description>
-				</rdf:RDF>
-			</x:xmpmeta>
-		<?xpacket end="w"?>`.trim();
+function createPDFMetadata() {
+	const yamlFile = fs.readFileSync(path.join(__dirname, "../../../src/data/site.yaml"), "utf8");
+	const siteMetadata = yaml.parse(yamlFile);
+	const xmp = siteMetadata?.xmp;
+	const currentDate = new Date();
+
+	return {
+		title: xmp.title,
+		subject: xmp.subject,
+		creator: xmp.creator,
+		producer: xmp.producer,
+		keywords: xmp.keywords.split(",").map(k => k.trim()),
+		creationDate: currentDate,
+		modificationDate: currentDate,
+		// description: xmp.description,
+		// format: xmp.format,
+		pdfua: {
+			part: 1,
+			conformance: "U"
+		},
+		markInfo: {
+			marked: true,
+			userProperties: false,
+			suspects: false
+		}
+	};
 }
 
 // Set PDF page properties
@@ -61,20 +61,90 @@ function setPageProperties(pdfDoc) {
 async function addMetadata(pdfPath, metadata) {
 	try {
 		const pdfDoc = await PDFDocument.load(await fs.readFile(pdfPath));
+		const pdfMetadata = createPDFMetadata(metadata);
 
-		const xmpMetadata = generateXMPMetadata(metadata);
+		// Set basic metadata
+		pdfDoc.setTitle(pdfMetadata.title);
+		pdfDoc.setSubject(pdfMetadata.subject);
+		pdfDoc.setCreator(pdfMetadata.creator);
+		pdfDoc.setProducer(pdfMetadata.producer);
+		pdfDoc.setCreationDate(pdfMetadata.creationDate);
+		pdfDoc.setModificationDate(pdfMetadata.modificationDate);
+		pdfDoc.setKeywords(pdfMetadata.keywords);
+
+		// Set PDF/UA identifier and requirements
+		pdfDoc.catalog.set(PDFName.of("StructTreeRoot"),
+			pdfDoc.context.obj({
+				Type: PDFName.of("StructTreeRoot"),
+				ParentTree: pdfDoc.context.obj({
+					Nums: []
+				}),
+				ParentTreeNextKey: 0,
+				RoleMap: pdfDoc.context.obj({}),
+				ClassMap: pdfDoc.context.obj({})
+			})
+		);
+
+		// Add MarkInfo for PDF/UA
+		pdfDoc.catalog.set(PDFName.of("MarkInfo"),
+			pdfDoc.context.obj({
+				Marked: true,
+				UserProperties: false,
+				Suspects: false
+			})
+		);
+
+		// Generate and add XMP metadata
+		const xmpMetadata = `
+			<?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?>
+			<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c006 80.159825, 2016/09/16-03:31:08">
+				<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+				<rdf:Description rdf:about=""
+					xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+					xmlns:pdfuaid="http://www.aiim.org/pdfua/ns/id/"
+					xmlns:pdfaid="http://www.aiim.org/pdfa/ns/id/"
+					xmlns:dc="http://purl.org/dc/elements/1.1/"
+					xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+					<pdfuaid:part>1</pdfuaid:part>
+					<pdf:Producer>Puppeteer with PDF/UA support</pdf:Producer>
+					<dc:format>application/pdf</dc:format>
+					<dc:title>
+						<rdf:Alt>
+							<rdf:li xml:lang="x-default">${pdfMetadata.title}</rdf:li>
+						</rdf:Alt>
+					</dc:title>
+					<dc:creator>
+						<rdf:Seq>
+							<rdf:li>${pdfMetadata.creator}</rdf:li>
+						</rdf:Seq>
+					</dc:creator>
+					<dc:description>
+						<rdf:Alt>
+							<rdf:li xml:lang="x-default">${pdfMetadata.description}</rdf:li>
+						</rdf:Alt>
+					</dc:description>
+					<xmp:CreatorTool>PDF Generator Script</xmp:CreatorTool>
+					<xmp:CreateDate>${pdfMetadata.creationDate.toISOString()}</xmp:CreateDate>
+					<xmp:ModifyDate>${pdfMetadata.modificationDate.toISOString()}</xmp:ModifyDate>
+				</rdf:Description>
+			</rdf:RDF>
+		</x:xmpmeta>
+		<?xpacket end="w"?>`.trim();
+
+		// Add XMP metadata to PDF
 		const metadataStream = pdfDoc.context.flateStream(xmpMetadata);
 		const metadataStreamRef = pdfDoc.context.register(metadataStream);
-
-		// Set metadata
 		pdfDoc.catalog.set(PDFName.of("Metadata"), metadataStreamRef);
-		pdfDoc.setSubject("PDF/UA-1");
 
 		// Set page properties
 		setPageProperties(pdfDoc);
 
 		// Save changes
-		const pdfBytes = await pdfDoc.save({ updateMetadata: false });
+		const pdfBytes = await pdfDoc.save({
+			updateMetadata: false,
+			addDefaultPage: false
+		});
+
 		await fs.writeFile(pdfPath, pdfBytes);
 
 		console.log(`✅ Added metadata to ${pdfPath}`);
@@ -86,6 +156,6 @@ async function addMetadata(pdfPath, metadata) {
 
 module.exports = {
 	addMetadata,
-	generateXMPMetadata,
+	createPDFMetadata,
 	setPageProperties
 };
