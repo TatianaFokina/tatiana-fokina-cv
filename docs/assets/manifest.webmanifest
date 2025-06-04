@@ -2,18 +2,18 @@
 	"name": "Tatiana Fokina CV",
 	"icons": [
 		{
-			"src": "/favicon-192x192.png",
+			"src": "assets/favicon-192x192.png",
 			"type": "image/png",
 			"sizes": "192x192"
 		},
 		{
-			"src": "/favicon-512x512.png",
+			"src": "assets/favicon-512x512.png",
 			"type": "image/png",
 			"sizes": "512x512"
 		}
 	],
 	"start_url": "/tatiana-fokina-cv/",
-	"scope": "/assets/",
+	"scope": "/tatiana-fokina-cv/",
 	"background_color": "#ffffff",
   "theme_color": "#ffffff",
 	"display": "standalone"
