@@ -7,6 +7,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "node scripts/build.js",
+    "check:pdf": "node scripts/check-pdf-structure.js",
     "generate-pdf": "node scripts/generate-pdf.js"
   },
   "resolutions": {

@@ -163,7 +163,7 @@ const processStructureTree = (node, results, depth = 0, parentType = null, conte
 			if (kids instanceof PDFArray) {
 				kids.array.forEach(kid => {
 					processStructureTree(kid, results, depth + 1, structType, resolvedNode.context);
-			});
+				});
 			} else {
 				processStructureTree(kids, results, depth + 1, structType, resolvedNode.context);
 			}
