@@ -113,8 +113,10 @@ async function updatePdfUrl(version, cvData) {
 	try {
 		const cvPath = path.join(PATHS.src.cv, `${version}.yaml`);
 
-		// Update PDF URL in data
-		cvData.personal.pdf.url = PATHS.out.patterns.pdfUrl(version);
+		// Update both PDF URL and meta image
+		cvData.personal.pdf.url = PATHS.out.autoLinks.pdf(version);
+		cvData.meta.html = PATHS.out.autoLinks.html(version);
+		cvData.meta.image = PATHS.out.autoLinks.ogImage(version);
 
 		// Write updated YAML
 		const updatedYaml = yaml.dump(cvData, {

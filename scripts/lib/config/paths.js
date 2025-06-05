@@ -44,7 +44,11 @@ const PATHS = {
 		patterns: {
 			html: (version) => path.join(PATHS.out.html, `${createVersionAlias(version)}.html`),
 			pdf: (version) => path.join(PATHS.out.pdf, `fokina-${version}.pdf`),
-			pdfUrl: (version) => `/pdf/fokina-${version}.pdf`
+		},
+		autoLinks: {
+			pdf: (version) => `/pdf/fokina-${version}.pdf`,
+			html: (version) => `/html/${version}.html`,
+			ogImage: (version) => `/assets/${version}.png`
 		}
 	},
 };
