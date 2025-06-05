@@ -14,7 +14,7 @@ const PDF_OPTIONS = {
 	annotating: true,
 	tagged: true,
 	generateTaggedPDF: true,
-	structureTreeRoot: true,
+	structureTreeRoot: true
 };
 
 // Combine CSS files for PDF generation
@@ -50,13 +50,17 @@ async function generatePDF(htmlPath, outputPath, metadata) {
 	const browser = await puppeteer.launch({
 		executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
 		headless: true,
-		args: process.env.CI ? [
+		args: [
 			'--disable-dev-shm-usage',
 			'--disable-gpu',
 			'--disable-web-security',
-			'--disable-features=VizDisplayCompositor',
-			...(process.env.CI && !process.env.CHROME_DEVEL_SANDBOX ? ['--no-sandbox'] : [])
-		] : []
+			'--enable-blink-features=AccessibilityObjectModel',
+			'--enable-features=PrintWithReducedTagging,TaggedPDFWithReducedTagging',
+			...(process.env.CI ? [
+				'--disable-features=VizDisplayCompositor',
+				...(process.env.CHROME_DEVEL_SANDBOX ? [] : ['--no-sandbox'])
+			] : [])
+		]
 	});
 
 	try {
