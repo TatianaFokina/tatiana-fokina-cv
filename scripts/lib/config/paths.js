@@ -48,7 +48,7 @@ const PATHS = {
 		autoLinks: {
 			pdf: (version) => `/pdf/fokina-${version}.pdf`,
 			html: (version) => `/html/${version}.html`,
-			ogImage: (version) => `/assets/${version}.png`
+			ogImage: (version) => `/assets/og-${createVersionAlias(version)}.png`
 		}
 	},
 };
