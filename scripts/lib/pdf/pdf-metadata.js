@@ -60,7 +60,12 @@ function setPageProperties(pdfDoc) {
 
 async function addMetadata(pdfPath, metadata) {
 	try {
-		const pdfDoc = await PDFDocument.load(await fs.readFile(pdfPath));
+		const pdfBytes = await fs.readFile(pdfPath);
+		const pdfDoc = await PDFDocument.load(pdfBytes, {
+			updateMetadata: false,
+			preserveStructTree: true
+		});
+
 		const pdfMetadata = createPDFMetadata(metadata);
 
 		// Set basic metadata
@@ -72,14 +77,17 @@ async function addMetadata(pdfPath, metadata) {
 		pdfDoc.setModificationDate(pdfMetadata.modificationDate);
 		pdfDoc.setKeywords(pdfMetadata.keywords);
 
-		// Add MarkInfo for PDF/UA
-		pdfDoc.catalog.set(PDFName.of("MarkInfo"),
-			pdfDoc.context.obj({
-				Marked: true,
-				UserProperties: false,
-				Suspects: false
-			})
-		);
+		// Only update MarkInfo if it doesn't exist
+		const existingMarkInfo = pdfDoc.catalog.get(PDFName.of("MarkInfo"));
+			if (!existingMarkInfo) {
+				pdfDoc.catalog.set(PDFName.of("MarkInfo"),
+					pdfDoc.context.obj({
+						Marked: true,
+						UserProperties: false,
+						Suspects: false
+				})
+			);
+		}
 
 		// Generate and add XMP metadata
 		const xmpMetadata = `
@@ -126,13 +134,14 @@ async function addMetadata(pdfPath, metadata) {
 		// Set page properties
 		setPageProperties(pdfDoc);
 
-		// Save changes
-		const pdfBytes = await pdfDoc.save({
+		// Save with structure preservation
+		const updatedPdfBytes = await pdfDoc.save({
 			updateMetadata: false,
-			addDefaultPage: false
+			addDefaultPage: false,
+			preserveStructTree: true
 		});
 
-		await fs.writeFile(pdfPath, pdfBytes);
+		await fs.writeFile(pdfPath, updatedPdfBytes);
 
 		console.log(`✅ Added metadata to ${pdfPath}`);
 	} catch (error) {
