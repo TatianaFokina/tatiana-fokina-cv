@@ -44,7 +44,7 @@ const PATHS = {
 		patterns: {
 			html: (version) => path.join(PATHS.out.html, `${createVersionAlias(version)}.html`),
 			pdf: (version) => path.join(PATHS.out.pdf, `fokina-${version}.pdf`),
-			pdfUrl: (version, baseUrl) => `${baseUrl}/pdf/fokina-${version}.pdf`
+			pdfUrl: (version) => `/pdf/fokina-${version}.pdf`
 		}
 	},
 };
