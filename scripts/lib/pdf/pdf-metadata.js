@@ -72,19 +72,6 @@ async function addMetadata(pdfPath, metadata) {
 		pdfDoc.setModificationDate(pdfMetadata.modificationDate);
 		pdfDoc.setKeywords(pdfMetadata.keywords);
 
-		// Set PDF/UA identifier and requirements
-		pdfDoc.catalog.set(PDFName.of("StructTreeRoot"),
-			pdfDoc.context.obj({
-				Type: PDFName.of("StructTreeRoot"),
-				ParentTree: pdfDoc.context.obj({
-					Nums: []
-				}),
-				ParentTreeNextKey: 0,
-				RoleMap: pdfDoc.context.obj({}),
-				ClassMap: pdfDoc.context.obj({})
-			})
-		);
-
 		// Add MarkInfo for PDF/UA
 		pdfDoc.catalog.set(PDFName.of("MarkInfo"),
 			pdfDoc.context.obj({
