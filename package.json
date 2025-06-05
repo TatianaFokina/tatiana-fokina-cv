@@ -12,7 +12,7 @@
   },
   "resolutions": {
     "tar-fs": ">=3.0.9",
-    "puppeteer-core": "23.5.1"
+    "puppeteer-core": ">=23.5.1"
   },
   "dependencies": {
     "fs-extra": "^11.2.0",
@@ -22,7 +22,7 @@
     "nunjucks-in-yaml": "^1.0.4",
     "nunjucks-to-html": "^1.1.0",
     "pdf-lib": "^1.17.1",
-    "puppeteer": "^23.5.1",
+    "puppeteer": "^24.0.0",
     "yaml": "^2.8.0"
   }
 }
