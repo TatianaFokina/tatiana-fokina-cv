@@ -158,7 +158,6 @@ const processStructureTree = (node, results, depth = 0, parentType = null, conte
 			}
 		}
 
-			// Process children silently
 		if (kids) {
 			if (kids instanceof PDFArray) {
 				kids.array.forEach(kid => {

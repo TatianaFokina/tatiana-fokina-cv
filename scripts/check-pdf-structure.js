@@ -21,13 +21,13 @@ async function checkPDFStructure(pdfPath) {
 // Run as standalone script or export for use in other modules
 if (require.main === module) {
 	const pdfPath = process.argv[2] ||
-		path.join(__dirname, "..", "docs", "pdf", "fokina-a11y-engineer-v1.0.pdf");
+		path.join(__dirname, '..', 'docs', 'pdf', 'fokina-a11y-engineer-v1.0.pdf');
 
 	checkPDFStructure(pdfPath)
 		.catch(error => {
 			console.error("Failed to check PDF structure:", error);
 			process.exit(1);
 		});
-} else {
-	module.exports = checkPDFStructure;
+	} else {
+		module.exports = checkPDFStructure;
 }
