@@ -68,7 +68,7 @@ jobs:
         run: pnpm run build
 
       - name: Generate PDF
-        run: pnpm run generate-pdf
+        run: pnpm run generate:pdf
         env:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome-stable
           CHROME_DEVEL_SANDBOX: /tmp/chrome-sandbox

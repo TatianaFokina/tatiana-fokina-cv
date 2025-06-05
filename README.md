@@ -35,7 +35,7 @@ pnpm run build
 Generate PDF version based on HTML locally:
 
 ```bash
-pnpm run generate-pdf
+pnpm run generate:pdf
 ```
 
 ## Caveats
@@ -53,6 +53,12 @@ Document accessibility issues:
 [Explanations of issues](https://pac.pdf-accessibility.org/en/resources/pac-2024-quality-checks/) 🤔
 
 For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screen readers.
+
+The command for the local check of issues with PDF structure:
+
+```bash
+pnpm run check:pdf
+```
 
 ## File versioning
 
