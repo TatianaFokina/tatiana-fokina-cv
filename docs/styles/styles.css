@@ -201,6 +201,12 @@ body {
 	line-height: var(--leading-base);
 }
 
+.cv__section:focus,
+.cv__section:focus-visible {
+	outline: 0;
+	border: 0;
+}
+
 .cv__metadata-item,
 .cv__position {
 	display: inline-flex;
@@ -256,6 +262,30 @@ body {
 .contacts__link:focus-visible,
 .cv__link:focus-visible {
 	outline: var(--border-link);
+}
+
+.cv-header__skip-link {
+	position: absolute;
+	display: inline-block;
+	top: auto;
+	left: -999px;
+	width: 1px;
+	height: 1px;
+	overflow:hidden;
+	text-decoration: none;
+}
+
+.cv-header__skip-link:focus-visible {
+	top: 21px;
+	left: 21px;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	padding: 0.5em 1em;
+	color: var(--color-text-primary);
+	background-color: var(--color-accent-secondary);
+	outline: var(--border-link);
+	border-radius: var(--border-radius-lg);
 }
 
 /* Animation */

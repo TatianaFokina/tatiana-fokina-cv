@@ -62,6 +62,7 @@
 	/* Hide web-only elements */
 
 	.cv-header__pdf-link,
+	.cv-header__skip-link,
 	.contacts__text {
 		display: none;
 	}

@@ -1,5 +1,6 @@
 <div class="cv-header">
 	<div class="cv-header__content">
+		<a class="cv-header__skip-link" href="#main-content">Skip to main content</a>
 		<a
 			class="cv-header__pdf-link"
 			href="{{ site.base.url }}{{ cv.personal.pdf["url"] }}"
@@ -13,53 +14,53 @@
 			{{ cv.personal["job title"] }}
 		</h2>
 	</div>
-		<nav class="cv-header__contacts">
-			<ul class="contacts__list">
-				<li class="contacts__item">
-					{{ cv.personal["location"] }}
-				</li>
-				<li class="contacts__item">
-					{{ cv.personal["phone"] }}
-				</li>
-				<li class="contacts__item">
-					{{ cv.personal["visa"] }}
-				</li>
-			</ul>
-			<ul class="contacts__list">
-				<li class="contacts__item">
-					<a
-						class="contacts__link"
-						href="mailto:{{ cv.personal.email["address"] }}"
-					>
-						{{ cv.personal.email["address"] }}
-					</a>
-				</li>
-				<li class="contacts__item">
-					<a
-						class="contacts__link"
-						href="{{ cv.personal.link["url"] }}"
-					>
-						<span class="contacts__text">
-							{{ cv.personal.link["site label"] }}
-						</span>
-						<span class="contacts__text contacts__text--print">
-							{{ cv.personal.link["pdf label"] }}
-						</span>
-					</a>
-				</li>
-				<li class="contacts__item">
-					<a
-						class="contacts__link"
-						href="{{ cv.personal.portfolio["url"] }}"
-					>
-						<span class="contacts__text">
-							{{ cv.personal.portfolio["site label"] }}
-						</span>
-						<span class="contacts__text contacts__text--print">
-							{{ cv.personal.portfolio["pdf label"] }}
-						</span>
-					</a>
-				</li>
-			</ul>
-		</nav>
+	<nav class="cv-header__contacts">
+		<ul class="contacts__list">
+			<li class="contacts__item">
+				{{ cv.personal["location"] }}
+			</li>
+			<li class="contacts__item">
+				{{ cv.personal["phone"] }}
+			</li>
+			<li class="contacts__item">
+				{{ cv.personal["visa"] }}
+			</li>
+		</ul>
+		<ul class="contacts__list">
+			<li class="contacts__item">
+				<a
+					class="contacts__link"
+					href="mailto:{{ cv.personal.email["address"] }}"
+				>
+					{{ cv.personal.email["address"] }}
+				</a>
+			</li>
+			<li class="contacts__item">
+				<a
+					class="contacts__link"
+					href="{{ cv.personal.link["url"] }}"
+				>
+					<span class="contacts__text">
+						{{ cv.personal.link["site label"] }}
+					</span>
+					<span class="contacts__text contacts__text--print">
+						{{ cv.personal.link["pdf label"] }}
+					</span>
+				</a>
+			</li>
+			<li class="contacts__item">
+				<a
+					class="contacts__link"
+					href="{{ cv.personal.portfolio["url"] }}"
+				>
+					<span class="contacts__text">
+						{{ cv.personal.portfolio["site label"] }}
+					</span>
+					<span class="contacts__text contacts__text--print">
+						{{ cv.personal.portfolio["pdf label"] }}
+					</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
 </div>
