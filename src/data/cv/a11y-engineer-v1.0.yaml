@@ -77,13 +77,16 @@ education:
   degree: Specialist's degree in Integrated Library Systems (ILS).
   year: June 2015
   location: St. Petersburg, Russia
-other:
-  title: Certificates, Community Involvement
-  sections:
-    - name: Courses and certificates.
+  extra:
+    - name: Courses.
       content: |
-        Practical Accessibility course,
+        [Practical Accessibility](https://practical-accessibility.today), [Accessibility Testing](https://accessibilitytestingcourse.com).
+    - name: Certificates.
+      content: |
         [CPACC](https://www.credly.com/badges/85bed477-9084-44c7-9d4e-1526c5ee99ff/public_url){external-link}, Trusted Tester (v5.1.3).
+other:
+  title: Community Involvement
+  sections:
     - name: Community experience.
       content: |
         Google's Women Techmakers ambassador (WTM);

@@ -87,6 +87,13 @@
 						{{ cv.education.degree }}
 					</p>
 				</header>
+				{% for extra in cv.education.extra %}
+					<p class="cv__text">
+						<b>{{ extra.name }}</b>
+						{% set content = extra.content | replace("\n", " ") %}
+						{{ content | urlize | safe }}
+					</p>
+				{% endfor %}
 			</article>
 		</section>
 
