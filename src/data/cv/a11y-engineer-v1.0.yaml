@@ -78,12 +78,9 @@ education:
   year: June 2015
   location: St. Petersburg, Russia
   extra:
-    - name: Courses.
+    - name: Courses and certificates.
       content: |
-        [Practical Accessibility](https://practical-accessibility.today), [Accessibility Testing](https://accessibilitytestingcourse.com).
-    - name: Certificates.
-      content: |
-        [CPACC](https://www.credly.com/badges/85bed477-9084-44c7-9d4e-1526c5ee99ff/public_url){external-link}, Trusted Tester (v5.1.3).
+        [Practical Accessibility](https://practical-accessibility.today), [Accessibility Testing Course](https://accessibilitytestingcourse.com); [CPACC](https://www.credly.com/badges/85bed477-9084-44c7-9d4e-1526c5ee99ff/public_url){external-link}, Trusted Tester (v5.1.3).
 other:
   title: Community Involvement
   sections:
