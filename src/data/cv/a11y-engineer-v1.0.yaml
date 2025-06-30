@@ -25,7 +25,7 @@ summary:
     - Demonstrated proficiency in web technologies, including HTML, CSS, and JavaScript. Mastery of WAI-ARIA, WCAG, and ATAG standards and guidelines. Experienced with assistive technologies and testing tools.
     - Leadership in accessibility advocacy through public writing, speaking engagements and community initiatives.
 experience:
-  title: Work experience
+  title: Work Experience
   last:
     company: Doka Guide
     job title: Editor, accessibility engineer, contributor.
@@ -34,7 +34,7 @@ experience:
     achievements:
       - Architected a content plan, directed and launched the Accessibility section within a 3-month timeframe.
       - Collaborated with 70+ contributors to develop 20+ articles on accessibility, 20+ materials on HTML and CSS, and 50+ on other web technologies.
-      - Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.
+      - Crafted more than 100 articles on topics such as accessibility, HTML, and CSS.
       - Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's website.
   previous:
     company: JUG Ru Group
@@ -43,8 +43,8 @@ experience:
     location: St. Petersburg, Russia
     achievements:
       - Led accessibility audits on 10+ conference sites, improving Lighthouse accessibility scores by 48%.
-      - Maintained and modernized 10+ legacy projects, enhancing performance by 15% and ensured functionality for 5,000+ users
-      - Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhanced user experience and functionality.
+      - Maintained and modernized 10+ legacy projects, enhancing performance by 15% and ensuring functionality for 5,000+ users.
+      - Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhancing user experience and functionality.
       - Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.
   initial:
     company: Self-employment
@@ -62,7 +62,7 @@ skills:
     set: HTML5, JavaScript (ECMAScript 6), CSS3.
   skillset 2:
     name: Advanced skills.
-    set: TypeScript, Angular, Next.js, Sass/SCSS, Stylus, Pug, Nunjacks.
+    set: TypeScript, Angular, Next.js, Sass/SCSS, Stylus, Pug, Nunjucks.
   skillset 3:
     name: Standards and legislation.
     set: WAI-ARIA 1.2, WCAG 2.2, ATAG 2.0, WCAG-EM 1.0, Americans with Disabilities Act (ADA), Section 508, Equality Act 2010, EN 301 549, Web Accessibility Directive (WAD), European Accessibility Act (EAA).
@@ -79,7 +79,7 @@ education:
   year: June 2015
   location: St. Petersburg, Russia
 other:
-  title: Community involvement
+  title: Certificates, Community Involvement
   sections:
     - name: Courses and certificates.
       content: |
