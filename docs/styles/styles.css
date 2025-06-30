@@ -149,7 +149,6 @@ body {
 	flex-direction: column;
 	margin: var(--space-md) 0;
 	padding: 1.2em 1em;
-	gap: 1.135em;
 	background: var(--gradient-background);
 	border-radius: var(--border-radius-sm);
 }
@@ -159,13 +158,14 @@ body {
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: start;
-	gap: 1.135em;
+	gap: 1.1em;
 	list-style-type: none;
 }
 
 @media (width >= 610px) {
 	.contacts__list {
 		flex-direction: row;
+		gap: 0.6em;
 	}
 }
 

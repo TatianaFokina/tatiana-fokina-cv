@@ -3,11 +3,10 @@ personal:
   candidate name: Tatiana Fokina
   job title: Accessibility Engineer
   location: Tbilisi, Georgia
-  phone: +9 000 000 000
-  visa: UK Global Talent Visa Holder
+  phone: +995 000 00 00 00
   link:
     site label: LinkedIn
-    pdf label: linkedin.com/in/tanya-fokina
+    pdf label: li/tanya-fokina
     url: https://www.linkedin.com/in/tanya-fokina/
   email:
     address: fokinatatian@gmail.com
@@ -21,7 +20,7 @@ personal:
 summary:
   title: Summary
   paragraphs:
-    - CPACC-certified Accessibility Engineer with 5+ years of Web/Frontend Development, specializing in developing user-centred interfaces.
+    - CPACC-certified Accessibility Engineer with 5+ years of Web/Frontend Development, specializing in developing user-centred interfaces. UK Global Talent Visa holder.
     - Demonstrated proficiency in web technologies, including HTML, CSS, and JavaScript. Mastery of WAI-ARIA, WCAG, and ATAG standards and guidelines. Experienced with assistive technologies and testing tools.
     - Leadership in accessibility advocacy through public writing, speaking engagements and community initiatives.
 experience:

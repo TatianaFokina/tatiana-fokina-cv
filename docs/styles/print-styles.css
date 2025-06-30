@@ -101,13 +101,13 @@
 		margin-top: var(--print-space-md);
 		margin-bottom: var(--print-space-xl);
 		padding: 0;
-		gap: 4px;
+		gap: var(--print-space-xs);
 		background: none;
 		border-radius: 0;
 	}
 
 	.contacts__list {
-		gap: 16px;
+		gap: var(--print-space-sm);
 	}
 
 	/* Content styles */
