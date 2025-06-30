@@ -43,7 +43,7 @@ experience:
     location: St. Petersburg, Russia
     achievements:
       - Led accessibility audits on 10+ conference sites, improving Lighthouse accessibility scores by 48%.
-      - Maintained and modernized 10+ legacy projects, enchasing performance by 15% and ensured functionality for 5,000+ users
+      - Maintained and modernized 10+ legacy projects, enhancing performance by 15% and ensured functionality for 5,000+ users
       - Engineered 4 features for user accounts on the ticket platform in collaboration with designers, frontend, and backend developers, enhanced user experience and functionality.
       - Co-developed a live streaming conference platform from concept to launch within a 2-month timespan.
   initial:
@@ -79,7 +79,7 @@ education:
   year: June 2015
   location: St. Petersburg, Russia
 other:
-  title: Other
+  title: Community involvement
   sections:
     - name: Courses and certificates.
       content: |
